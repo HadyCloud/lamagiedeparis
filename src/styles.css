@@ -1,0 +1,422 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * La Magie de Paris — design system
+ * Antique Parisian salon: deep garnet + gold + cream.
+ */
+
+:root {
+  --garnet: #37070F;
+  --garnet-deep: #23050A;
+  --garnet-mid: #5C0E1C;
+  --gold: #C9A24B;
+  --gold-light: #EAD6A0;
+  --gold-40: rgba(201, 162, 75, 0.4);
+  --gold-15: rgba(201, 162, 75, 0.15);
+  --cream: #F3E9D2;
+  --ink: #241310;
+
+  --background: var(--garnet);
+  --foreground: var(--cream);
+
+  --font-display: "Cormorant Garamond", "Cormorant", Georgia, serif;
+  --font-label: "Cinzel", "Trajan Pro", serif;
+  --font-body: "EB Garamond", "Garamond", Georgia, serif;
+}
+
+@theme inline {
+  --color-garnet: var(--garnet);
+  --color-garnet-deep: var(--garnet-deep);
+  --color-garnet-mid: var(--garnet-mid);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-display: var(--font-display);
+  --font-label: var(--font-label);
+  --font-body: var(--font-body);
+}
+
+@layer base {
+  html {
+    background: var(--garnet-deep);
+  }
+  body {
+    background: var(--garnet);
+    color: var(--cream);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--gold);
+    color: var(--garnet-deep);
+  }
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+  p { margin: 0; }
+}
+
+/* ---------- Damask dot texture on dark sections ---------- */
+.bg-damask {
+  background-color: var(--garnet);
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(201,162,75,0.06) 1px, transparent 1.5px),
+    radial-gradient(circle at 75% 75%, rgba(234,214,160,0.05) 1px, transparent 1.5px);
+  background-size: 28px 28px, 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+.bg-damask-deep {
+  background-color: var(--garnet-deep);
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(201,162,75,0.07) 1px, transparent 1.5px),
+    radial-gradient(circle at 75% 75%, rgba(234,214,160,0.05) 1px, transparent 1.5px);
+  background-size: 32px 32px, 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+/* ---------- Typography helpers ---------- */
+.eyebrow {
+  font-family: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: 0.72rem;
+  color: var(--gold);
+  font-weight: 500;
+}
+.display {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.02;
+}
+
+/* ---------- Gold arch frame ---------- */
+.arch {
+  border-radius: 999px 999px 10px 10px;
+  border: 2px solid var(--gold);
+  overflow: hidden;
+  position: relative;
+  box-shadow:
+    0 30px 60px -30px rgba(0,0,0,0.7),
+    inset 0 0 0 6px rgba(35,5,10,0.4),
+    inset 0 0 0 7px var(--gold-40);
+  background: var(--garnet-deep);
+}
+.arch img, .arch video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.arch-thin {
+  border-radius: 999px 999px 8px 8px;
+  border: 1.5px solid var(--gold-40);
+  overflow: hidden;
+  background: var(--garnet-deep);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  padding: 0.95rem 1.6rem;
+  min-height: 48px;
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: transform 250ms ease, box-shadow 250ms ease, background 250ms ease, color 250ms ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+.btn-gold {
+  background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 55%, #a8863a 100%);
+  color: var(--garnet-deep);
+  box-shadow: 0 10px 24px -14px rgba(201,162,75,0.7), inset 0 1px 0 rgba(255,255,255,0.4);
+}
+.btn-gold:hover { transform: translateY(-1px); box-shadow: 0 16px 30px -14px rgba(201,162,75,0.9), inset 0 1px 0 rgba(255,255,255,0.5); }
+.btn-outline {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: transparent;
+}
+.btn-outline:hover { background: rgba(201,162,75,0.08); color: var(--gold-light); }
+
+/* ---------- Ornament divider ---------- */
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--gold);
+}
+.ornament::before, .ornament::after {
+  content: "";
+  width: 4rem;
+  height: 1px;
+  background: var(--gold-40);
+}
+
+/* ---------- Hairline dividers ---------- */
+.hairline { border-top: 1px solid var(--gold-40); }
+.hairline-b { border-bottom: 1px solid var(--gold-40); }
+
+/* ---------- Dotted price leader (menu) ---------- */
+.leader {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+}
+.leader .dish { color: var(--cream); flex-shrink: 0; }
+.leader .dots {
+  flex: 1;
+  border-bottom: 1px dotted var(--gold-40);
+  transform: translateY(-4px);
+  min-width: 1.5rem;
+}
+.leader .price {
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+  font-family: var(--font-label);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+.leader.on-cream .dish { color: var(--ink); }
+.leader.on-cream .dots { border-color: rgba(36,19,16,0.35); }
+.leader.on-cream .price { color: #7a4a1f; }
+
+/* ---------- Ticker ---------- */
+.ticker {
+  overflow: hidden;
+  background: var(--garnet-deep);
+  border-bottom: 1px solid var(--gold-40);
+  padding: 0.55rem 0;
+}
+.ticker-track {
+  display: inline-flex;
+  gap: 2.5rem;
+  white-space: nowrap;
+  animation: ticker 45s linear infinite;
+  font-family: var(--font-label);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-size: 0.72rem;
+  padding-left: 2.5rem;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
+
+/* ---------- Reviews strip ---------- */
+.reviews-track {
+  display: inline-flex;
+  gap: 3rem;
+  animation: ticker 60s linear infinite;
+  padding-left: 3rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reviews-track { animation: none; flex-wrap: wrap; padding-left: 0; }
+}
+
+/* ---------- Fade / rise on scroll ---------- */
+.rise {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+.rise.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .rise { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- Category rail ---------- */
+.cat-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1.5px solid var(--gold-40);
+  transition: border-color 250ms ease, transform 250ms ease;
+  flex-shrink: 0;
+}
+.cat-circle img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cat-active .cat-circle { border-color: var(--gold); border-width: 2px; transform: scale(1.05); }
+.cat-active .cat-label { color: var(--gold-light); }
+
+/* ---------- Logo plaque (photo logo on an ivory card, so it reads on dark) ---------- */
+.logo-plaque {
+  display: inline-flex;
+  padding: 3px;
+  background: linear-gradient(160deg, #fdf8ec, var(--cream) 60%, #e9d9b8);
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+  flex-shrink: 0;
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Nous trouver (find us) ---------- */
+.find {
+  padding: 110px 5vw;
+  background-color: var(--garnet-deep);
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(201,162,75,0.07) 1px, transparent 1.5px),
+    radial-gradient(circle at 75% 75%, rgba(234,214,160,0.05) 1px, transparent 1.5px);
+  background-size: 32px 32px, 32px 32px;
+  background-position: 0 0, 16px 16px;
+  border-top: 1px solid var(--gold-40);
+  border-bottom: 1px solid var(--gold-40);
+}
+.shead { text-align: center; max-width: 680px; margin: 0 auto; }
+.shead h2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(34px, 5vw, 60px);
+  color: var(--gold-light);
+  margin-top: 16px;
+}
+.find-in {
+  max-width: 1160px;
+  margin: 70px auto 0;
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+  gap: 64px;
+  align-items: stretch;
+}
+.find-map {
+  position: relative;
+  overflow: hidden;
+  border: 5px solid var(--gold);
+  border-radius: 999px 999px 12px 12px;
+  min-height: 380px;
+}
+.find-map iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(.35) sepia(.22) contrast(.92) brightness(.92);
+}
+.find-map .pin {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 15px;
+  background: rgba(35,5,10,0.72);
+  border: 1px solid var(--gold-40);
+  border-radius: 999px;
+  font-family: var(--font-label);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+.find-map .pin i {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gold); box-shadow: 0 0 12px var(--gold);
+  font-style: normal;
+}
+.find-card { display: flex; flex-direction: column; justify-content: center; padding: 6px 0; }
+.find-card h2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(30px, 4vw, 52px);
+  color: var(--gold-light);
+  line-height: 1.05;
+  margin-top: 14px;
+}
+.find-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 26px;
+  padding: 10px 18px;
+  align-self: flex-start;
+  border: 1px solid var(--gold-40);
+  border-radius: 999px;
+  font-family: var(--font-label);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+.find-badge i {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--gold); box-shadow: 0 0 12px var(--gold);
+  font-style: normal;
+}
+.find-rows { margin-top: 32px; border-top: 1px solid var(--gold-40); }
+.find-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 18px 2px;
+  border-bottom: 1px solid rgba(201,162,75,.22);
+}
+.find-row .k {
+  font-family: var(--font-label);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  flex: 0 0 auto;
+}
+.find-row .v {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--cream);
+  text-align: right;
+  line-height: 1.35;
+}
+.find-row .v a { color: var(--cream); text-decoration: none; border-bottom: 1px solid var(--gold); }
+.find-card .btn { margin-top: 36px; align-self: flex-start; }
+@media (max-width: 860px) {
+  .find-in { grid-template-columns: 1fr; }
+  .find-map { min-height: 300px; }
+}
