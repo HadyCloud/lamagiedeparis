@@ -70,6 +70,7 @@ function InfosPage() {
               <div className="find-row"><span className="k">Téléphone</span><span className="v"><a href={BUSINESS.phoneHref}>{BUSINESS.phone}</a></span></div>
               <div className="find-row"><span className="k">Email</span><span className="v"><a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a></span></div>
               <div className="find-row"><span className="k">Réseaux</span><span className="v"><a href={BUSINESS.instagramUrl} target="_blank" rel="noreferrer">Instagram</a> · <a href={BUSINESS.tiktokUrl} target="_blank" rel="noreferrer">TikTok</a></span></div>
+              <div className="find-row"><span className="k">Google</span><span className="v"><a href={BUSINESS.googleMapsUrl} target="_blank" rel="noreferrer">Voir la fiche</a></span></div>
             </div>
             <a className="btn btn-gold" href="https://maps.google.com/?q=15+Rue+Dupont+des+Loges,+75007+Paris" target="_blank" rel="noreferrer">Itinéraire →</a>
           </div>

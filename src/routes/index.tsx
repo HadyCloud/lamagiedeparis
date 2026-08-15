@@ -246,6 +246,14 @@ function Index() {
           <div className="ornament mt-6 !text-[color:var(--garnet-mid)]" style={{ color: "var(--garnet-mid)" }}>
             <span aria-hidden>✦</span>
           </div>
+          <a
+            href={BUSINESS.googleReviewUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-outline mt-8 !border-[color:var(--garnet-mid)] !text-[color:var(--garnet-mid)] hover:!bg-[color:var(--garnet-mid)]/10"
+          >
+            Laisser un avis Google
+          </a>
         </div>
         <div className="mt-16 overflow-hidden">
           <div className="reviews-track">
@@ -261,9 +269,9 @@ function Index() {
               { name: "Sofia K.", body: "Le meilleur cappuccino du 7ᵉ, et un accueil d'une gentillesse rare. Un incontournable." },
               { name: "Louis M.", body: "Les pancakes Dubaï sont une révélation. J'y retourne dès demain matin." },
             ]).map((r, i) => (
-              <figure key={i} className="w-[320px] sm:w-[380px] shrink-0 border-t border-b border-[color:var(--garnet-mid)]/25 py-8 px-2">
+              <figure key={i} className="w-[230px] sm:w-[380px] shrink-0 border-t border-b border-[color:var(--garnet-mid)]/25 py-8 px-2">
                 <Stars />
-                <blockquote className="mt-3 display italic text-xl text-[color:var(--ink)] leading-snug">
+                <blockquote className="mt-3 display italic text-lg sm:text-xl text-[color:var(--ink)] leading-snug line-clamp-3">
                   « {r.body} »
                 </blockquote>
                 <figcaption className="mt-4 eyebrow !text-[color:var(--garnet-mid)]">{r.name}</figcaption>

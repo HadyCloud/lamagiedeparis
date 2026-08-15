@@ -32,7 +32,16 @@ export const Route = createFileRoute("/carte")({
   component: CartePage,
 });
 
-type Dish = { name: string; desc?: string; price: string; img?: string; signature?: boolean };
+type Dish = {
+  name: string;
+  desc?: string;
+  price: string;
+  img?: string;
+  signature?: boolean;
+  glutenFree?: boolean;
+  vegetarian?: boolean;
+  lactoseFree?: boolean;
+};
 type Category = { id: string; roman: string; label: string; kind: "food" | "drink"; img: string; dishes: Dish[]; note?: string };
 
 const CATEGORIES: Category[] = [
@@ -43,13 +52,13 @@ const CATEGORIES: Category[] = [
     kind: "food",
     img: catBrioches,
     dishes: [
-      { name: "Brioche Toastée au Saumon", desc: "Écrasé d'avocat, saumon fumé, pousses d'épinards, roquette, œuf poché de plein air, sauce hollandaise, brioche maison chaude.", price: "19,90 €", img: sigSaumon, signature: true },
-      { name: "Brioche Toastée à la Truffe", desc: "Écrasé d'avocat, champignons poêlés à la truffe, pousses d'épinards, roquette, œuf poché plein air, sauce hollandaise, brioche maison chaude.", price: "19,90 €", img: dishBriocheTruffe },
-      { name: "Brioche Toastée aux Crevettes", desc: "Écrasé d'avocat, crevettes, ciboulette, aneth, citron, sauce blanche maison, vinaigrette au yuzu, œuf poché plein air, brioche maison chaude.", price: "16,50 €" },
-      { name: "Brioche Toastée Poulet", desc: "Écrasé d'avocat, filet de poulet rôti, pesto, tomates séchées, pousses d'épinards, roquette, sauce hollandaise à la truffe.", price: "16,50 €" },
-      { name: "Brioche Toastée Fromage Tressé", desc: "Écrasé d'avocat, pesto, fromage tressé, tomates cerises et confites, œuf poché de plein air, pousses d'épinard, roquette, sauce hollandaise.", price: "14,90 €", img: dishBriocheFromage },
-      { name: "Brioche Toastée au Houmous", desc: "Purée de pois chiches, citron, curcuma, poivre sauvage, grenade, tomates confites, concombre, brioche maison chaude.", price: "14,90 €" },
-      { name: "Brioche Toastée au Labneh", desc: "Écrasé d'avocat, labneh, tomates cerises, concombre, menthe, roquette, huile d'olive, paprika, œuf poché plein air.", price: "13,90 €" },
+      { name: "Brioche Toastée au Saumon", desc: "Écrasé d'avocat, saumon fumé, pousses d'épinards, roquette, œuf poché de plein air, sauce hollandaise, brioche maison chaude.", price: "19,90 €", img: sigSaumon, signature: true, glutenFree: false, vegetarian: false, lactoseFree: false },
+      { name: "Brioche Toastée à la Truffe", desc: "Écrasé d'avocat, champignons poêlés à la truffe, pousses d'épinards, roquette, œuf poché plein air, sauce hollandaise, brioche maison chaude.", price: "19,90 €", img: dishBriocheTruffe, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Brioche Toastée aux Crevettes", desc: "Écrasé d'avocat, crevettes, ciboulette, aneth, citron, sauce blanche maison, vinaigrette au yuzu, œuf poché plein air, brioche maison chaude.", price: "16,50 €", glutenFree: false, vegetarian: false, lactoseFree: false },
+      { name: "Brioche Toastée Poulet", desc: "Écrasé d'avocat, filet de poulet rôti, pesto, tomates séchées, pousses d'épinards, roquette, sauce hollandaise à la truffe.", price: "16,50 €", glutenFree: false, vegetarian: false, lactoseFree: false },
+      { name: "Brioche Toastée Fromage Tressé", desc: "Écrasé d'avocat, pesto, fromage tressé, tomates cerises et confites, œuf poché de plein air, pousses d'épinard, roquette, sauce hollandaise.", price: "14,90 €", img: dishBriocheFromage, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Brioche Toastée au Houmous", desc: "Purée de pois chiches, citron, curcuma, poivre sauvage, grenade, tomates confites, concombre, brioche maison chaude.", price: "14,90 €", glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Brioche Toastée au Labneh", desc: "Écrasé d'avocat, labneh, tomates cerises, concombre, menthe, roquette, huile d'olive, paprika, œuf poché plein air.", price: "13,90 €", glutenFree: false, vegetarian: true, lactoseFree: false },
     ],
   },
   {
@@ -59,9 +68,9 @@ const CATEGORIES: Category[] = [
     kind: "food",
     img: catPancakesSales,
     dishes: [
-      { name: "Pancakes Saumon", desc: "Écrasé d'avocat, sirop d'érable, saumon fumé, épinards frais, œuf poché de plein air.", price: "18,90 €", img: dishPancakesSaumon },
-      { name: "Pancakes Crevettes", desc: "Écrasé d'avocat, crevettes, ciboulette, citron, mayo, pousses d'épinards, roquette, vinaigrette au yuzu, œuf poché plein air.", price: "18,90 €" },
-      { name: "Pancakes Labneh", desc: "Écrasé d'avocat, labneh, tomates cerises, concombre, menthe, roquette, huile d'olive, paprika, œuf poché plein air.", price: "13,90 €" },
+      { name: "Pancakes Saumon", desc: "Écrasé d'avocat, sirop d'érable, saumon fumé, épinards frais, œuf poché de plein air.", price: "18,90 €", img: dishPancakesSaumon, glutenFree: false, vegetarian: false, lactoseFree: false },
+      { name: "Pancakes Crevettes", desc: "Écrasé d'avocat, crevettes, ciboulette, citron, mayo, pousses d'épinards, roquette, vinaigrette au yuzu, œuf poché plein air.", price: "18,90 €", glutenFree: false, vegetarian: false, lactoseFree: false },
+      { name: "Pancakes Labneh", desc: "Écrasé d'avocat, labneh, tomates cerises, concombre, menthe, roquette, huile d'olive, paprika, œuf poché plein air.", price: "13,90 €", glutenFree: false, vegetarian: true, lactoseFree: false },
     ],
     note: "Suppléments : purée d'avocat +3 € · crevettes ou saumon +4 € · œuf poché +1,50 €",
   },
@@ -72,9 +81,9 @@ const CATEGORIES: Category[] = [
     kind: "food",
     img: catPancakesSucres,
     dishes: [
-      { name: "Pancakes Dubaï", desc: "Crème pistache maison, coulis de chocolat Valrhona, pistaches et kunafa grillés.", price: "2p 13,90 € · 3p 15,50 €", img: sigDubai, signature: true },
-      { name: "Pancakes Fruits Frais", desc: "Sirop d'érable, fruits frais de saison, noix de pécan torréfiées, crème fouettée à la vanille de Madagascar.", price: "2p 15 € · 3p 16,50 €", img: dishPancakesFruits },
-      { name: "Pancakes Crème Noisettes", desc: "Crème noisette gourmande, crème fouettée à la vanille de Madagascar.", price: "2p 13 € · 3p 14,50 €" },
+      { name: "Pancakes Dubaï", desc: "Crème pistache maison, coulis de chocolat Valrhona, pistaches et kunafa grillés.", price: "2p 13,90 € · 3p 15,50 €", img: sigDubai, signature: true, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Pancakes Fruits Frais", desc: "Sirop d'érable, fruits frais de saison, noix de pécan torréfiées, crème fouettée à la vanille de Madagascar.", price: "2p 15 € · 3p 16,50 €", img: dishPancakesFruits, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Pancakes Crème Noisettes", desc: "Crème noisette gourmande, crème fouettée à la vanille de Madagascar.", price: "2p 13 € · 3p 14,50 €", glutenFree: false, vegetarian: true, lactoseFree: false },
     ],
   },
   {
@@ -84,12 +93,12 @@ const CATEGORIES: Category[] = [
     kind: "food",
     img: catDouceurs,
     dishes: [
-      { name: "Cookie Chocolat au Lait & Fleur de Sel", desc: "Avec noix de pécan.", price: "3,50 €" },
-      { name: "Cookie Pistache & Chocolat au Lait", desc: "Le plus gourmand de nos cookies.", price: "4,00 €" },
-      { name: "Cookie Chocolat Noir & Fleur de Sel", desc: "Intense et fondant.", price: "3,50 €" },
-      { name: "Croissant", desc: "Pur beurre, doré au four.", price: "2,00 €" },
-      { name: "Glace Maison (1 boule)", desc: "Disponible uniquement en été. Extra pistache +1,50 €.", price: "3,50 €" },
-      { name: "Glace Maison (2 boules)", desc: "Disponible uniquement en été.", price: "7,00 €" },
+      { name: "Cookie Chocolat au Lait & Fleur de Sel", desc: "Avec noix de pécan.", price: "3,50 €", glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Cookie Pistache & Chocolat au Lait", desc: "Le plus gourmand de nos cookies.", price: "4,00 €", glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Cookie Chocolat Noir & Fleur de Sel", desc: "Intense et fondant.", price: "3,50 €", glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Croissant", desc: "Pur beurre, doré au four.", price: "2,00 €", glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Glace Maison (1 boule)", desc: "Disponible uniquement en été. Extra pistache +1,50 €.", price: "3,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Glace Maison (2 boules)", desc: "Disponible uniquement en été.", price: "7,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
     ],
   },
   {
@@ -99,19 +108,19 @@ const CATEGORIES: Category[] = [
     kind: "drink",
     img: catChaudes,
     dishes: [
-      { name: "Espresso", price: "2,50 €" },
-      { name: "Double Espresso", price: "3,00 €" },
-      { name: "Cappuccino", price: "5,50 €" },
-      { name: "Café Latte", price: "5,00 €" },
-      { name: "Flat White (double espresso)", price: "4,00 €" },
-      { name: "Café Mocha au Chocolat", price: "7,00 €" },
-      { name: "Chaï Latte", price: "5,50 €" },
-      { name: "Matcha Latte", price: "5,00 €" },
-      { name: "Matcha Latte au Sésame Noir", price: "6,00 €" },
-      { name: "Matcha Latte au Collagène & Sésame Noir", price: "6,50 €" },
-      { name: "Chocolat Chaud", price: "6,50 €" },
-      { name: "Chocolat Viennois", price: "7,00 €" },
-      { name: "Thé & Infusions", desc: "Vert Sencha, noir Earl Grey, noir Breakfast, vert à la menthe, rooibos vahiné.", price: "5,00 €" },
+      { name: "Espresso", price: "2,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { name: "Double Espresso", price: "3,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { name: "Cappuccino", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Café Latte", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Flat White (double espresso)", price: "4,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Café Mocha au Chocolat", price: "7,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Chaï Latte", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Matcha Latte", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Matcha Latte au Sésame Noir", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Matcha Latte au Collagène & Sésame Noir", price: "6,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Chocolat Chaud", price: "6,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Chocolat Viennois", price: "7,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Thé & Infusions", desc: "Vert Sencha, noir Earl Grey, noir Breakfast, vert à la menthe, rooibos vahiné.", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
     ],
   },
   {
@@ -121,18 +130,18 @@ const CATEGORIES: Category[] = [
     kind: "drink",
     img: catGlacees,
     dishes: [
-      { name: "Iced Matcha Latte Fraise", desc: "Le latte signature de la maison.", price: "6,00 €" },
-      { name: "Iced Café Latte", price: "5,00 €" },
-      { name: "Iced Américano", price: "4,00 €" },
-      { name: "Iced Chaï Latte", price: "5,50 €" },
-      { name: "Iced Matcha Latte", price: "5,50 €" },
-      { name: "Chocolat Glacé", price: "6,00 €" },
-      { name: "Thé Glacé Pêche", price: "5,00 €" },
-      { name: "Virgin Mojito", price: "5,50 €" },
-      { name: "Virgin Mojito Fraise", price: "6,00 €" },
-      { name: "Jus d'Orange Pressé", price: "6,00 €" },
-      { name: "Jus d'Orange, Hibiscus, Fleur d'Oranger", price: "5,50 €" },
-      { name: "Jus de Grenade Bio", desc: "Sans sucres ajoutés.", price: "5,50 €" },
+      { name: "Iced Matcha Latte Fraise", desc: "Le latte signature de la maison.", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Iced Café Latte", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Iced Américano", price: "4,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { name: "Iced Chaï Latte", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Iced Matcha Latte", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Chocolat Glacé", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Thé Glacé Pêche", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { name: "Virgin Mojito", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { name: "Virgin Mojito Fraise", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { name: "Jus d'Orange Pressé", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { name: "Jus d'Orange, Hibiscus, Fleur d'Oranger", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { name: "Jus de Grenade Bio", desc: "Sans sucres ajoutés.", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
     ],
     note: "Suppléments boissons : double shot +0,50 € · lait végétal +0,50 € · sirop caramel, vanille ou noisette +0,50 €",
   },
@@ -142,7 +151,15 @@ function CartePage() {
   const { cat } = Route.useSearch();
   const initial = CATEGORIES.some((c) => c.id === cat) ? (cat as string) : CATEGORIES[0].id;
   const [active, setActive] = useState<string>(initial);
+  const [filters, setFilters] = useState({ glutenFree: false, vegetarian: false, lactoseFree: false });
   const current = CATEGORIES.find((c) => c.id === active)!;
+  const dishes = current.dishes.filter((d) => {
+    if (filters.glutenFree && !d.glutenFree) return false;
+    if (filters.vegetarian && !d.vegetarian) return false;
+    if (filters.lactoseFree && !d.lactoseFree) return false;
+    return true;
+  });
+  const anyFilterActive = filters.glutenFree || filters.vegetarian || filters.lactoseFree;
   const ref = useReveal();
 
   return (
@@ -227,15 +244,49 @@ function CartePage() {
 
           {/* Content */}
           <div>
-            <div className="flex items-baseline gap-4">
-              <span className="font-[family-name:var(--font-label)] text-[color:var(--gold)] tracking-[0.25em]">{current.roman}</span>
-              <h2 className="display italic text-4xl sm:text-5xl text-[color:var(--cream)]">{current.label}</h2>
+            <div className="flex flex-wrap items-baseline justify-between gap-4">
+              <div className="flex items-baseline gap-4">
+                <span className="font-[family-name:var(--font-label)] text-[color:var(--gold)] tracking-[0.25em]">{current.roman}</span>
+                <h2 className="display italic text-4xl sm:text-5xl text-[color:var(--cream)]">{current.label}</h2>
+              </div>
+              <div className="flex flex-wrap gap-2 shrink-0">
+                {(
+                  [
+                    { key: "glutenFree", label: "Sans gluten" },
+                    { key: "vegetarian", label: "Végétarien" },
+                    { key: "lactoseFree", label: "Sans lactose" },
+                  ] as const
+                ).map((f) => {
+                  const on = filters[f.key];
+                  return (
+                    <button
+                      key={f.key}
+                      type="button"
+                      onClick={() => setFilters((prev) => ({ ...prev, [f.key]: !prev[f.key] }))}
+                      aria-pressed={on}
+                      className={`rounded-full border px-2.5 py-1 font-[family-name:var(--font-label)] text-[0.55rem] uppercase tracking-[0.1em] transition-colors ${
+                        on
+                          ? "border-[color:var(--gold)] bg-[color:var(--gold-15)] text-[color:var(--gold-light)]"
+                          : "border-[color:var(--gold)]/40 text-[color:var(--cream)]/70 hover:border-[color:var(--gold)]"
+                      }`}
+                    >
+                      {f.label}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
             <Ornament className="mt-6 justify-start" />
 
-            {current.kind === "food" ? (
+            {dishes.length === 0 ? (
+              <p className="mt-12 text-[color:var(--cream)]/60 italic">
+                {anyFilterActive
+                  ? "Aucun plat ne correspond à ces filtres dans cette catégorie. Essayez une autre catégorie ou retirez un filtre."
+                  : "Aucun plat dans cette catégorie pour le moment."}
+              </p>
+            ) : current.kind === "food" ? (
               <div className="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-12">
-                {current.dishes.map((d) => (
+                {dishes.map((d) => (
                   <article key={d.name} className="rise flex gap-5 items-start">
                     {d.img ? (
                       <div className="w-24 sm:w-28 shrink-0">
@@ -260,7 +311,7 @@ function CartePage() {
               </div>
             ) : (
               <div className="mt-12 grid sm:grid-cols-2 gap-x-14 gap-y-5">
-                {current.dishes.map((d) => (
+                {dishes.map((d) => (
                   <div key={d.name} className="rise">
                     <div className="leader">
                       <span className="dish font-[family-name:var(--font-display)] italic text-xl">{d.name}</span>
