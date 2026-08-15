@@ -193,12 +193,12 @@
   font-family: var(--font-body);
   font-size: 1.05rem;
 }
-.leader .dish { color: var(--cream); flex-shrink: 0; }
+.leader .dish { color: var(--cream); min-width: 0; }
 .leader .dots {
   flex: 1;
   border-bottom: 1px dotted var(--gold-40);
   transform: translateY(-4px);
-  min-width: 1.5rem;
+  min-width: 0.75rem;
 }
 .leader .price {
   color: var(--gold);
