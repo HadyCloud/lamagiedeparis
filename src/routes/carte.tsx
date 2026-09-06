@@ -7,12 +7,19 @@ import catPancakesSucres from "@/assets/cat-pancakes-sucres.jpg";
 import catDouceurs from "@/assets/cat-douceurs.jpg";
 import catChaudes from "@/assets/cat-chaudes.jpg";
 import catGlacees from "@/assets/cat-glacees.jpg";
-import sigSaumon from "@/assets/sig-saumon.jpg";
-import sigDubai from "@/assets/sig-dubai.jpg";
-import dishBriocheTruffe from "@/assets/dish-brioche-truffe.jpg";
-import dishBriocheFromage from "@/assets/dish-brioche-fromage-tresse.jpg";
-import dishPancakesSaumon from "@/assets/dish-pancakes-saumon.jpg";
-import dishPancakesFruits from "@/assets/dish-pancakes-fruits.jpg";
+import briocheHoumous from "@/assets/brioche-houmous.png";
+import briocheSaumon from "@/assets/brioche-saumon.png";
+import briocheCrevettes from "@/assets/brioche-crevettes.png";
+import briocheFromageTresse from "@/assets/brioche-fromage-tresse.png";
+import briochePoulet from "@/assets/brioche-poulet.png";
+import briocheTruffe from "@/assets/brioche-truffe.png";
+import briocheLabneh from "@/assets/brioche-labneh.png";
+import pancakesSaumon from "@/assets/pancakes-saumon.png";
+import pancakesCrevettes from "@/assets/pancakes-crevettes.png";
+import pancakesLabneh from "@/assets/pancakes-labneh.jpg";
+import pancakesNoisette from "@/assets/pancakes-noisette.png";
+import pancakesFruitsFrais from "@/assets/pancakes-fruits-frais.png";
+import pancakesDubai from "@/assets/pancakes-dubai.png";
 
 export const Route = createFileRoute("/carte")({
   validateSearch: (search: Record<string, unknown>): { cat?: string } => ({
@@ -52,13 +59,13 @@ const CATEGORIES: Category[] = [
     kind: "food",
     img: catBrioches,
     dishes: [
-      { name: "Brioche Toastée au Houmous", desc: "Purée de pois chiches, citron, curcuma, poivre sauvage, pousses d'épinards, roquette, mélasse de grenade, tomates, concombre, brioche maison chaude.", price: "14,90 €", glutenFree: false, vegetarian: true, lactoseFree: false },
-      { name: "Brioche Toastée au Saumon", desc: "Purée d'avocat, saumon fumé, pousses d'épinards, roquette, œuf poché de plein air, sauce hollandaise, brioche maison chaude.", price: "14,90 €", img: sigSaumon, signature: true, glutenFree: false, vegetarian: false, lactoseFree: false },
-      { name: "Brioche Toastée aux Crevettes", desc: "Purée d'avocat, crevettes, ciboulette, aneth, citron, sauce blanche maison, pousses d'épinards, roquette, œuf poché de plein air, brioche maison chaude.", price: "19,90 €", glutenFree: false, vegetarian: false, lactoseFree: false },
-      { name: "Brioche Toastée Fromage Tressé", desc: "Purée d'avocat, pesto, fromage tressé, tomates cerises, tomates confites, œuf poché de plein air, pousses d'épinards, roquette, sauce hollandaise, brioche maison chaude.", price: "14,90 €", img: dishBriocheFromage, glutenFree: false, vegetarian: true, lactoseFree: false },
-      { name: "Brioche Toastée Poulet", desc: "Purée d'avocat, filet de poulet rôti, pickles, pesto, tomates séchées, pousses d'épinards, sauce hollandaise à la truffe, brioche maison chaude.", price: "16,50 €", glutenFree: false, vegetarian: false, lactoseFree: false },
-      { name: "Brioche Toastée à la Truffe", desc: "Purée d'avocat, champignons sautés à la truffe, pousses d'épinards, roquette, œuf poché de plein air, sauce hollandaise, brioche maison chaude.", price: "19,90 €", img: dishBriocheTruffe, glutenFree: false, vegetarian: true, lactoseFree: false },
-      { name: "Brioche Toastée au Labneh", desc: "Avocat, labneh, tomates cerises, concombre, menthe, roquette, huile d'olive, paprika, œuf poché de plein air, brioche maison chaude.", price: "13,90 €", glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Brioche Toastée au Houmous", desc: "Purée de pois chiches, citron, curcuma, poivre sauvage, pousses d'épinards, roquette, mélasse de grenade, tomates, concombre, brioche maison chaude.", price: "14,90 €", img: briocheHoumous, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Brioche Toastée au Saumon", desc: "Purée d'avocat, saumon fumé, pousses d'épinards, roquette, œuf poché de plein air, sauce hollandaise, brioche maison chaude.", price: "14,90 €", img: briocheSaumon, signature: true, glutenFree: false, vegetarian: false, lactoseFree: false },
+      { name: "Brioche Toastée aux Crevettes", desc: "Purée d'avocat, crevettes, ciboulette, aneth, citron, sauce blanche maison, pousses d'épinards, roquette, œuf poché de plein air, brioche maison chaude.", price: "19,90 €", img: briocheCrevettes, glutenFree: false, vegetarian: false, lactoseFree: false },
+      { name: "Brioche Toastée Fromage Tressé", desc: "Purée d'avocat, pesto, fromage tressé, tomates cerises, tomates confites, œuf poché de plein air, pousses d'épinards, roquette, sauce hollandaise, brioche maison chaude.", price: "14,90 €", img: briocheFromageTresse, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Brioche Toastée Poulet", desc: "Purée d'avocat, filet de poulet rôti, pickles, pesto, tomates séchées, pousses d'épinards, sauce hollandaise à la truffe, brioche maison chaude.", price: "16,50 €", img: briochePoulet, glutenFree: false, vegetarian: false, lactoseFree: false },
+      { name: "Brioche Toastée à la Truffe", desc: "Purée d'avocat, champignons sautés à la truffe, pousses d'épinards, roquette, œuf poché de plein air, sauce hollandaise, brioche maison chaude.", price: "19,90 €", img: briocheTruffe, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Brioche Toastée au Labneh", desc: "Avocat, labneh, tomates cerises, concombre, menthe, roquette, huile d'olive, paprika, œuf poché de plein air, brioche maison chaude.", price: "13,90 €", img: briocheLabneh, glutenFree: false, vegetarian: true, lactoseFree: false },
     ],
   },
   {
@@ -68,10 +75,11 @@ const CATEGORIES: Category[] = [
     kind: "food",
     img: catPancakesSales,
     dishes: [
-      { name: "Pancakes Saumon", desc: "Purée d'avocat, sirop d'érable, saumon fumé, épinards frais, œuf poché de plein air.", price: "13,90 €", img: dishPancakesSaumon, glutenFree: false, vegetarian: false, lactoseFree: false },
-      { name: "Pancakes Crevettes", desc: "Purée d'avocat, sirop d'érable, crevettes, ciboulette, aneth, citron, sauce blanche maison, pousses d'épinards, roquette, œuf poché de plein air.", price: "18,90 €", glutenFree: false, vegetarian: false, lactoseFree: false },
-      { name: "Pancakes Labneh", desc: "Avocat, labneh, tomates cerises, concombre, menthe, roquette, huile d'olive, paprika, œuf poché de plein air.", price: "13,90 €", glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Pancakes Saumon", desc: "Purée d'avocat, sirop d'érable, saumon fumé, épinards frais, œuf poché de plein air.", price: "2p 13,90 € · 3p 15,50 €", img: pancakesSaumon, glutenFree: false, vegetarian: false, lactoseFree: false },
+      { name: "Pancakes Crevettes", desc: "Purée d'avocat, sirop d'érable, crevettes, ciboulette, aneth, citron, sauce blanche maison, pousses d'épinards, roquette, œuf poché de plein air.", price: "18,90 €", img: pancakesCrevettes, glutenFree: false, vegetarian: false, lactoseFree: false },
+      { name: "Pancakes Labneh", desc: "Avocat, labneh, tomates cerises, concombre, menthe, roquette, huile d'olive, paprika, œuf poché de plein air.", price: "13,90 €", img: pancakesLabneh, glutenFree: false, vegetarian: true, lactoseFree: false },
     ],
+    note: "Suppléments : purée d'avocat +3 € · crevettes ou saumon +4 € · œuf poché +1,50 €",
   },
   {
     id: "pancakes-sucres",
@@ -80,9 +88,9 @@ const CATEGORIES: Category[] = [
     kind: "food",
     img: catPancakesSucres,
     dishes: [
-      { name: "Pancakes Crème de Noisette", desc: "Crème de noisette maison, sirop d'érable, sauce chocolat, amandes torréfiées, chantilly à la vanille de Madagascar.", price: "13,00 €", glutenFree: false, vegetarian: true, lactoseFree: false },
-      { name: "Pancakes aux Fruits Frais", desc: "Sirop d'érable, fruits frais de saison, amandes torréfiées, chantilly à la vanille de Madagascar.", price: "13,00 €", img: dishPancakesFruits, glutenFree: false, vegetarian: true, lactoseFree: false },
-      { name: "Pancakes Dubaï", desc: "Crème pistache maison, sirop d'érable, sauce chocolat, pistaches torréfiées, kunafa grillée, chantilly à la vanille de Madagascar.", price: "15,00 €", img: sigDubai, signature: true, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Pancakes Crème de Noisette", desc: "Crème de noisette maison, sirop d'érable, sauce chocolat, amandes torréfiées, chantilly à la vanille de Madagascar.", price: "2p 13,00 € · 3p 14,50 €", img: pancakesNoisette, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Pancakes aux Fruits Frais", desc: "Sirop d'érable, fruits frais de saison, amandes torréfiées, chantilly à la vanille de Madagascar.", price: "2p 13,00 € · 3p 14,50 €", img: pancakesFruitsFrais, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { name: "Pancakes Dubaï", desc: "Crème pistache maison, sirop d'érable, sauce chocolat, pistaches torréfiées, kunafa grillée, chantilly à la vanille de Madagascar.", price: "2p 15,00 € · 3p 16,50 €", img: pancakesDubai, signature: true, glutenFree: false, vegetarian: true, lactoseFree: false },
     ],
   },
   {
@@ -126,7 +134,7 @@ const CATEGORIES: Category[] = [
     img: catChaudes,
     dishes: [
       { name: "Espresso / Café Allongé", price: "2,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
-      { name: "Double Espresso", price: "4,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { name: "Double Espresso", price: "4,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
       { name: "Americano", desc: "Double dose.", price: "4,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
       { name: "Macchiato", price: "3,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
       { name: "Flat White", desc: "Double espresso.", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
@@ -135,11 +143,14 @@ const CATEGORIES: Category[] = [
       { name: "Chaï Latte Café", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
       { name: "Chaï Latte", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
       { name: "Matcha Latte", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Matcha Latte au Sésame Noir", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
       { name: "Matcha Latte au Collagène & Sésame Noir", price: "6,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { name: "Café Mocha au Chocolat", desc: "Fait maison.", price: "7,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
       { name: "Chocolat Chaud Viennois", desc: "Fait maison.", price: "7,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
       { name: "Chocolat Chaud", desc: "Fait maison.", price: "7,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
       { name: "Thé & Infusions", desc: "Demandez à votre barista. Au choix : thé vert sencha, thé vert à la menthe, thé noir breakfast, thé noir earl grey, infusion rooibos vahiné.", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
     ],
+    note: "Suppléments : double shot +0,50 € · lait végétal (avoine, coco, amande) +0,50 € · sirop caramel, vanille ou noisette +0,50 €",
   },
   {
     id: "fraiches",
@@ -153,6 +164,9 @@ const CATEGORIES: Category[] = [
       { name: "Jus Frais", desc: "Orange, hibiscus et fleur d'oranger.", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
       { name: "Jus de Grenade Bio", desc: "Sans sucres ajoutés.", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
       { name: "Jus d'Orange Pressé", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { name: "Eau Minérale", price: "2,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { name: "Eau Gazeuse (Perrier)", price: "4,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { name: "Coca-Cola", price: "3,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
     ],
   },
   {
@@ -175,6 +189,7 @@ const CATEGORIES: Category[] = [
       { name: "Iced Chaï Latte", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
       { name: "Iced Mocha Chocolat", price: "7,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
     ],
+    note: "Suppléments : double shot +0,50 € · lait végétal (avoine, coco, amande) +0,50 € · sirop caramel, vanille ou noisette +0,50 €",
   },
 ];
 
