@@ -4,9 +4,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Arch, Ornament, SectionHead, Stars, BUSINESS, useReveal } from "@/components/brand";
 import hero from "@/assets/hero.jpg";
-import sigFruits from "@/assets/sig-fruits.jpg";
-import sigPancakesSaumon from "@/assets/sig-pancakes-saumon.jpg";
-import sigBriochePoulet from "@/assets/sig-brioche-poulet.jpg";
+import sigBriocheFromageTresse from "@/assets/sig2-brioche-fromage-tresse.jpg";
+import sigBriochePoulet from "@/assets/sig2-brioche-poulet.jpg";
+import sigPancakesDubai from "@/assets/sig2-pancakes-dubai.png";
 import story from "@/assets/story.jpg";
 import cravingSale from "@/assets/craving-sale.jpg";
 import cravingSucre from "@/assets/craving-sucre.jpg";
@@ -36,8 +36,8 @@ const CRAVINGS = [
 ];
 
 const SIGNATURE_DISHES = [
-  { img: sigPancakesSaumon, name: "Pancakes Saumon", price: "18,90 €", startRotate: -6 },
-  { img: sigFruits, name: "Pancakes Fruits Frais", price: "2p 15 € · 3p 16,50 €", startRotate: 0 },
+  { img: sigBriocheFromageTresse, name: "Brioche Toastée Fromage Tressé", price: "14,90 €", startRotate: -6 },
+  { img: sigPancakesDubai, name: "Pancakes Dubaï", price: "2p 15,00 € · 3p 16,50 €", startRotate: 0 },
   { img: sigBriochePoulet, name: "Brioche Toastée Poulet", price: "16,50 €", startRotate: 6 },
 ];
 
@@ -115,12 +115,12 @@ function Index() {
           <div className="rise order-2 md:order-1">
             <div className="eyebrow">La Maison</div>
             <h2 className="display italic mt-4 text-5xl sm:text-6xl text-[color:var(--cream)]">
-              Entre Damas<br />et Paris.
+              Un Brunch<br />Sculpté.
             </h2>
             <Ornament className="mt-6 justify-start" />
             <div className="mt-6 space-y-4 text-[color:var(--cream)]/80 leading-relaxed">
               <p>
-                Ici s'entremêlent le souvenir des salons de Damas et l'esprit des cafés du 7ᵉ arrondissement. Velours grenat, dorures anciennes, marbre veiné : un décor de conte pour prendre le temps, comme autrefois.
+                Ici s'entremêlent le souvenir des salons orientaux et l'esprit des cafés du 7ᵉ arrondissement. Velours grenat, dorures anciennes, marbre veiné : un décor de conte pour prendre le temps, comme autrefois.
               </p>
               <p>
                 Rien n'est laissé au hasard. Le chef compose chaque plat un par un, comme on façonnerait une sculpture, avec des produits choisis chaque matin et un café de spécialité torréfié en petits lots.
@@ -203,36 +203,6 @@ function Index() {
         </div>
         <div className="text-center mt-14">
           <Link to="/carte" className="btn btn-outline">Voir toute la carte →</Link>
-        </div>
-      </section>
-
-      {/* ---------- LE SALON ---------- */}
-      <section className="py-24 sm:py-32 px-5 sm:px-8">
-        <SectionHead eyebrow="Le Salon" title={<>Une <em>ambiance</em> feutrée</>}>
-          <p>Velours, dorures, marbre veiné, chandelles : un salon comme on n'en fait plus.</p>
-        </SectionHead>
-        <div className="mx-auto max-w-5xl mt-16 grid grid-cols-3 gap-5 sm:gap-8 md:gap-12">
-          {([
-            { src: "/assets/clip_ambiance.mp4", label: "L'ambiance", desc: "Un décor où chaque détail raconte une autre époque." },
-            { src: "/assets/clip_plats.mp4",   label: "Les assiettes", desc: "Chaque assiette est dressée comme une sculpture, sur une porcelaine d'un autre temps." },
-            { src: "/assets/clip_cafe.mp4",    label: "Le café",      desc: "Torréfié en petits lots, servi avec le soin d'un rituel." },
-          ] as const).map((v) => (
-            <div key={v.src} className="rise flex flex-col items-center">
-              <div className="arch aspect-[9/16] w-full" style={{ background: "var(--garnet-black, var(--garnet-deep))" }}>
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  style={{ width: "100%", height: "100%", objectFit: "contain", background: "var(--garnet-deep)", display: "block" }}
-                >
-                  <source src={v.src} type="video/mp4" />
-                </video>
-              </div>
-              <h3 className="display italic mt-4 text-xl sm:text-2xl text-[color:var(--cream)] text-center">{v.label}</h3>
-              <p className="mt-2 text-[color:var(--cream)]/65 text-sm text-center hidden sm:block">{v.desc}</p>
-            </div>
-          ))}
         </div>
       </section>
 
