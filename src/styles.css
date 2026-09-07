@@ -338,8 +338,9 @@
 }
 .find-map .pin {
   position: absolute;
-  top: 18px;
-  left: 18px;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
   display: inline-flex;
   align-items: center;
