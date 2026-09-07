@@ -48,25 +48,33 @@ function Index() {
   useEffect(() => {
     if (!sigRef.current) return;
     gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      const dishes = gsap.utils.toArray<HTMLElement>(".sig-dish-arch");
-      dishes.forEach((el, i) => {
-        gsap.set(el, {
-          opacity: 0,
-          scale: 0.72,
-          rotate: SIGNATURE_DISHES[i]?.startRotate ?? 0,
-          transformOrigin: "50% 60%",
+    // Below `sm`, the section is no longer pinned/full-height (see className below),
+    // so it's shorter than the viewport — that inverts the "top top" → "bottom bottom"
+    // scrub range and leaves the dishes stuck at opacity 0. Only run the scroll-scrubbed
+    // reveal where the pin effect actually applies; mobile just shows them normally.
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 640px)", () => {
+      const ctx = gsap.context(() => {
+        const dishes = gsap.utils.toArray<HTMLElement>(".sig-dish-arch");
+        dishes.forEach((el, i) => {
+          gsap.set(el, {
+            opacity: 0,
+            scale: 0.72,
+            rotate: SIGNATURE_DISHES[i]?.startRotate ?? 0,
+            transformOrigin: "50% 60%",
+          });
         });
-      });
-      gsap.set(".sig-glow", { opacity: 0 });
-      gsap
-        .timeline({
-          scrollTrigger: { trigger: sigRef.current, start: "top top", end: "bottom bottom", scrub: 0.35 },
-        })
-        .to(".sig-glow", { opacity: 1, duration: 0.3 })
-        .to(dishes, { opacity: 1, scale: 1, rotate: 0, duration: 0.8, stagger: 0.2, ease: "power2.out" }, "<");
-    }, sigRef);
-    return () => ctx.revert();
+        gsap.set(".sig-glow", { opacity: 0 });
+        gsap
+          .timeline({
+            scrollTrigger: { trigger: sigRef.current, start: "top top", end: "bottom bottom", scrub: 0.35 },
+          })
+          .to(".sig-glow", { opacity: 1, duration: 0.3 })
+          .to(dishes, { opacity: 1, scale: 1, rotate: 0, duration: 0.8, stagger: 0.2, ease: "power2.out" }, "<");
+      }, sigRef);
+      return () => ctx.revert();
+    });
+    return () => mm.revert();
   }, []);
 
   return (
@@ -148,8 +156,8 @@ function Index() {
       </section>
 
       {/* ---------- LE PLAT SIGNATURE, 3 plats, pin + reveal au scroll ---------- */}
-      <section ref={sigRef} className="relative bg-damask-deep hairline hairline-b" style={{ height: "165vh" }}>
-        <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden px-5 sm:px-8">
+      <section ref={sigRef} className="relative bg-damask-deep hairline hairline-b h-auto sm:h-[165vh]">
+        <div className="static sm:sticky sm:top-0 h-auto sm:h-screen flex flex-col items-center justify-center overflow-hidden px-5 sm:px-8 py-16 sm:py-0">
           <div
             className="sig-glow pointer-events-none absolute inset-0"
             style={{ background: "radial-gradient(circle at 50% 42%, rgba(201,162,75,0.2), transparent 55%)" }}

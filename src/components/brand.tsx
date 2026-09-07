@@ -186,7 +186,7 @@ export function Footer() {
             </span>
           </div>
           <p className="mt-5 max-w-sm text-[color:var(--cream)]/70 font-[family-name:var(--font-body)]">
-            Un salon entre Damas et Paris, où chaque plat est composé à la main, tous les jours, sans réservation.
+            Un salon envoûtant, où chaque plat est composé à la main, tous les jours, sans réservation.
           </p>
           <Ornament className="mt-6 justify-start" />
         </div>
