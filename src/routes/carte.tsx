@@ -16,7 +16,7 @@ import briocheTruffe from "@/assets/brioche-truffe.png";
 import briocheLabneh from "@/assets/brioche-labneh.png";
 import pancakesSaumon from "@/assets/pancakes-saumon.png";
 import pancakesCrevettes from "@/assets/pancakes-crevettes.png";
-import pancakesLabneh from "@/assets/pancakes-labneh.jpg";
+import pancakesLabneh from "@/assets/pancakes-labneh.png";
 import pancakesNoisette from "@/assets/pancakes-noisette.png";
 import pancakesFruitsFrais from "@/assets/pancakes-fruits-frais.png";
 import pancakesDubai from "@/assets/pancakes-dubai.png";
@@ -116,19 +116,8 @@ const CATEGORIES: Category[] = [
     ],
   },
   {
-    id: "glaces-maison",
-    roman: "VI.",
-    label: "Glaces Maison",
-    kind: "food",
-    img: catGlacees,
-    dishes: [
-      { name: "Glace Maison (1 boule)", desc: "Une glace artisanale au lait crémeux et au mastic, délicatement sucrée à l'eau de rose ou de fleur d'oranger, parsemée d'éclats de pistache croquants.", price: "3,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Glace Maison (2 boules)", desc: "Une glace artisanale au lait crémeux et au mastic, délicatement sucrée à l'eau de rose ou de fleur d'oranger, parsemée d'éclats de pistache croquants.", price: "7,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-    ],
-  },
-  {
     id: "chaudes",
-    roman: "VII.",
+    roman: "VI.",
     label: "Boissons Chaudes",
     kind: "drink",
     img: catChaudes,
@@ -154,7 +143,7 @@ const CATEGORIES: Category[] = [
   },
   {
     id: "fraiches",
-    roman: "VIII.",
+    roman: "VII.",
     label: "Boissons Fraîches",
     kind: "drink",
     img: catGlacees,
@@ -171,7 +160,7 @@ const CATEGORIES: Category[] = [
   },
   {
     id: "glacees",
-    roman: "IX.",
+    roman: "VIII.",
     label: "Boissons Glacées",
     kind: "drink",
     img: catGlacees,

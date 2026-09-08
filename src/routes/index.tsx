@@ -7,11 +7,11 @@ import hero from "@/assets/hero.jpg";
 import sigBriocheFromageTresse from "@/assets/sig2-brioche-fromage-tresse.jpg";
 import sigBriochePoulet from "@/assets/sig2-brioche-poulet.jpg";
 import sigPancakesDubai from "@/assets/sig2-pancakes-dubai.png";
-import story from "@/assets/story.jpg";
-import cravingSale from "@/assets/craving-sale.jpg";
-import cravingSucre from "@/assets/craving-sucre.jpg";
+import story from "@/assets/story.png";
+import cravingSale from "@/assets/craving-sale.png";
+import cravingSucre from "@/assets/craving-sucre.png";
 import cravingCoffee from "@/assets/craving-coffee.jpg";
-import cravingFraicheurs from "@/assets/craving-fraicheurs.jpg";
+import cravingFraicheurs from "@/assets/craving-fraicheurs.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Arch, Ornament, SectionHead, BUSINESS, useReveal } from "@/components/brand";
-import story from "@/assets/story.jpg";
+import story from "@/assets/story.png";
 
 export const Route = createFileRoute("/infos")({
   head: () => ({
