@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Arch, Ornament, SectionHead, Stars, BUSINESS, useReveal } from "@/components/brand";
 import hero from "@/assets/hero.jpg";
 import sigBriocheFromageTresse from "@/assets/sig2-brioche-fromage-tresse.png";
-import sigBriochePoulet from "@/assets/sig2-brioche-poulet.jpg";
+import sigBriochePoulet from "@/assets/sig2-brioche-poulet.png";
 import sigPancakesDubai from "@/assets/sig2-pancakes-dubai.png";
 import story from "@/assets/story.png";
 import cravingSale from "@/assets/craving-sale.png";
