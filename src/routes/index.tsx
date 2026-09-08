@@ -44,6 +44,8 @@ const SIGNATURE_DISHES = [
 function Index() {
   const ref = useReveal();
   const sigRef = useRef<HTMLElement | null>(null);
+  const rating = BUSINESS.rating.replace("/5", "");
+  const reviewCount = BUSINESS.reviewCount;
 
   useEffect(() => {
     if (!sigRef.current) return;
@@ -146,8 +148,8 @@ function Index() {
               <div className="flex items-center gap-3">
                 <Stars />
                 <div className="text-left">
-                  <div className="font-[family-name:var(--font-display)] italic text-2xl text-[color:var(--gold-light)] leading-none">4,9<span className="text-[color:var(--cream)]/60 text-lg">/5</span></div>
-                  <div className="eyebrow text-[0.6rem] mt-1">787 avis Google</div>
+                  <div className="font-[family-name:var(--font-display)] italic text-2xl text-[color:var(--gold-light)] leading-none">{rating}<span className="text-[color:var(--cream)]/60 text-lg">/5</span></div>
+                  <div className="eyebrow text-[0.6rem] mt-1">{reviewCount} avis Google</div>
                 </div>
               </div>
             </div>
@@ -219,7 +221,7 @@ function Index() {
         <div className="text-center px-5">
           <div className="eyebrow !text-[color:var(--garnet-mid)]">Ils en parlent</div>
           <h2 className="display italic mt-4 text-5xl sm:text-6xl text-[color:var(--ink)]">
-            4,9<span className="text-[color:var(--garnet-mid)]">/5</span> sur <em>787 avis</em>
+            {rating}<span className="text-[color:var(--garnet-mid)]">/5</span> sur <em>{reviewCount} avis</em>
           </h2>
           <div className="ornament mt-6 !text-[color:var(--garnet-mid)]" style={{ color: "var(--garnet-mid)" }}>
             <span aria-hidden>✦</span>
