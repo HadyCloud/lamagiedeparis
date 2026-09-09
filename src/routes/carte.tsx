@@ -96,28 +96,19 @@ const CATEGORIES: Category[] = [
   {
     id: "cookies",
     roman: "IV.",
-    label: "Cookies",
+    label: "Cookies & Douceurs",
     kind: "food",
     img: catDouceurs,
     dishes: [
       { name: "Cookie Noix de Pécan, Chocolat au Lait & Fleur de Sel", price: "4,00 €", glutenFree: false, vegetarian: true, lactoseFree: false },
       { name: "Cookie Pistache & Chocolat au Lait", price: "4,00 €", glutenFree: false, vegetarian: true, lactoseFree: false },
       { name: "Cookie Chocolat Noir & Blanc, Fleur de Sel", price: "3,50 €", glutenFree: false, vegetarian: true, lactoseFree: false },
-    ],
-  },
-  {
-    id: "douceurs",
-    roman: "V.",
-    label: "Douceurs",
-    kind: "food",
-    img: catDouceurs,
-    dishes: [
       { name: "Croissant", price: "2,00 €", glutenFree: false, vegetarian: true, lactoseFree: false },
     ],
   },
   {
     id: "chaudes",
-    roman: "VI.",
+    roman: "V.",
     label: "Boissons Chaudes",
     kind: "drink",
     img: catChaudes,
@@ -143,7 +134,7 @@ const CATEGORIES: Category[] = [
   },
   {
     id: "fraiches",
-    roman: "VII.",
+    roman: "VI.",
     label: "Boissons Fraîches",
     kind: "drink",
     img: catGlacees,
@@ -160,7 +151,7 @@ const CATEGORIES: Category[] = [
   },
   {
     id: "glacees",
-    roman: "VIII.",
+    roman: "VII.",
     label: "Boissons Glacées",
     kind: "drink",
     img: catGlacees,
@@ -210,9 +201,9 @@ function CartePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 sm:px-8 py-16">
-        {/* Mobile horizontal photo scroller */}
+        {/* Mobile horizontal photo scroller — sticky so it stays reachable while the dishes below scroll */}
         <div
-          className="md:hidden -mx-5 px-5 flex gap-4 overflow-x-auto pb-4 hairline-b"
+          className="md:hidden sticky top-[77px] z-30 -mx-5 px-5 py-3 flex gap-4 overflow-x-auto bg-[color:var(--garnet)] hairline-b"
           role="tablist"
           aria-label="Catégories"
         >
