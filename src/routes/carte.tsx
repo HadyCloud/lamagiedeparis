@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Ornament, SectionHead, useReveal, Arch } from "@/components/brand";
-import catBrioches from "@/assets/cat-brioches.jpg";
-import catPancakesSales from "@/assets/cat-pancakes-sales.jpg";
-import catPancakesSucres from "@/assets/cat-pancakes-sucres.jpg";
-import catDouceurs from "@/assets/cat-douceurs.jpg";
+import catBrioches from "@/assets/cat-brioches.png";
+import catPancakesSales from "@/assets/cat-pancakes-sales.png";
+import catPancakesSucres from "@/assets/cat-pancakes-sucres.png";
+import catCookiesDouceurs from "@/assets/cat-cookies-douceurs.jpg";
 import catChaudes from "@/assets/cat-chaudes.jpg";
+import catFraiches from "@/assets/cat-fraiches.jpg";
 import catGlacees from "@/assets/cat-glacees.jpg";
 import briocheHoumous from "@/assets/brioche-houmous.png";
 import briocheSaumon from "@/assets/brioche-saumon.png";
@@ -98,7 +99,7 @@ const CATEGORIES: Category[] = [
     roman: "IV.",
     label: "Cookies & Douceurs",
     kind: "food",
-    img: catDouceurs,
+    img: catCookiesDouceurs,
     dishes: [
       { name: "Cookie Noix de Pécan, Chocolat au Lait & Fleur de Sel", price: "4,00 €", glutenFree: false, vegetarian: true, lactoseFree: false },
       { name: "Cookie Pistache & Chocolat au Lait", price: "4,00 €", glutenFree: false, vegetarian: true, lactoseFree: false },
@@ -137,7 +138,7 @@ const CATEGORIES: Category[] = [
     roman: "VI.",
     label: "Boissons Fraîches",
     kind: "drink",
-    img: catGlacees,
+    img: catFraiches,
     dishes: [
       { name: "Virgin Mojito", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
       { name: "Virgin Mojito Fraise", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
