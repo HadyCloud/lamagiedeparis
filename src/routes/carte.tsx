@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Ornament, SectionHead, useReveal, Arch } from "@/components/brand";
+import { Ornament, SectionHead, useReveal, Arch, BUSINESS } from "@/components/brand";
 import catBrioches from "@/assets/cat-brioches.png";
 import catPancakesSales from "@/assets/cat-pancakes-sales.png";
 import catPancakesSucres from "@/assets/cat-pancakes-sucres.png";
@@ -199,6 +199,14 @@ function CartePage() {
         >
           <p>Chaque plat est une petite sculpture, composée sur place avec des produits choisis chaque matin.</p>
         </SectionHead>
+        <a
+          href={BUSINESS.googleReviewUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="btn btn-outline mt-8 inline-flex"
+        >
+          Laisser un avis Google
+        </a>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 sm:px-8 py-16">
