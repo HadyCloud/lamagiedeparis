@@ -168,25 +168,28 @@ export function Nav() {
           <Link to="/infos" className={linkCls}>{t("nav.infos")}</Link>
           <LanguageSwitcher />
         </div>
-        <button
-          type="button"
-          className="md:hidden text-[color:var(--gold)] p-2 -mr-2"
-          aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
-          aria-expanded={open}
-          onClick={() => setOpen((o) => !o)}
-        >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-            {open ? (
-              <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-            ) : (
-              <>
-                <path d="M4 7h16" strokeLinecap="round" />
-                <path d="M4 12h16" strokeLinecap="round" />
-                <path d="M4 17h16" strokeLinecap="round" />
-              </>
-            )}
-          </svg>
-        </button>
+        <div className="md:hidden flex items-center gap-3">
+          <LanguageSwitcher />
+          <button
+            type="button"
+            className="text-[color:var(--gold)] p-2 -mr-2"
+            aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
+            aria-expanded={open}
+            onClick={() => setOpen((o) => !o)}
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              {open ? (
+                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+              ) : (
+                <>
+                  <path d="M4 7h16" strokeLinecap="round" />
+                  <path d="M4 12h16" strokeLinecap="round" />
+                  <path d="M4 17h16" strokeLinecap="round" />
+                </>
+              )}
+            </svg>
+          </button>
+        </div>
       </nav>
       {open ? (
         <div className="md:hidden hairline-b bg-[color:var(--garnet-deep)]">
@@ -194,7 +197,6 @@ export function Nav() {
             <Link to="/" className={linkCls} onClick={() => setOpen(false)}>{t("nav.home")}</Link>
             <Link to="/carte" className={linkCls} onClick={() => setOpen(false)}>{t("nav.menu")}</Link>
             <Link to="/infos" className={linkCls} onClick={() => setOpen(false)}>{t("nav.infos")}</Link>
-            <LanguageSwitcher className="mt-1" />
           </div>
         </div>
       ) : null}
