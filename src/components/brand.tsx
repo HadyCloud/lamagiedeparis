@@ -16,7 +16,7 @@ export const BUSINESS = {
   tiktok: "@lamagiedeparis7",
   tiktokUrl: "https://tiktok.com/@lamagiedeparis7",
   rating: "4,9/5",
-  reviewCount: "968",
+  reviewCount: "995",
   googleMapsUrl: "https://www.google.com/maps?cid=6117942293730300755",
   googleReviewUrl: "https://search.google.com/local/writereview?placeid=ChIJIfMK1nlv5kcRUxMiFhpM51Q",
 };
