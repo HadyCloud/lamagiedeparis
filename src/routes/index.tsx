@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
 const CRAVINGS = [
   { n: "I", img: cravingSale, title: "Salé", cat: "pancakes-sales" },
   { n: "II", img: cravingSucre, title: "Sucré", cat: "pancakes-sucres" },
-  { n: "III", img: cravingCoffee, title: "Coffee", cat: "chaudes" },
+  { n: "III", img: cravingCoffee, title: "Café", cat: "chaudes" },
   { n: "IV", img: cravingFraicheurs, title: "Fraîcheurs", cat: "glacees" },
 ];
 
