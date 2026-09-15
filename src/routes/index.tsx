@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Arch, Ornament, SectionHead, Stars, BUSINESS, useReveal } from "@/components/brand";
@@ -29,23 +30,25 @@ export const Route = createFileRoute("/")({
 });
 
 const CRAVINGS = [
-  { n: "I", img: cravingSale, title: "Salé", cat: "pancakes-sales" },
-  { n: "II", img: cravingSucre, title: "Sucré", cat: "pancakes-sucres" },
-  { n: "III", img: cravingCoffee, title: "Café", cat: "chaudes" },
-  { n: "IV", img: cravingFraicheurs, title: "Fraîcheurs", cat: "glacees" },
+  { n: "I", img: cravingSale, key: "sale", cat: "pancakes-sales" },
+  { n: "II", img: cravingSucre, key: "sucre", cat: "pancakes-sucres" },
+  { n: "III", img: cravingCoffee, key: "cafe", cat: "chaudes" },
+  { n: "IV", img: cravingFraicheurs, key: "fraicheurs", cat: "glacees" },
 ];
 
 const SIGNATURE_DISHES = [
-  { img: sigBriocheFromageTresse, name: "Brioche Toastée Fromage Tressé", price: "14,90 €", startRotate: -6 },
-  { img: sigPancakesDubai, name: "Pancakes Dubaï", price: "2p 15,00 € · 3p 16,50 €", startRotate: 0 },
-  { img: sigBriochePoulet, name: "Brioche Toastée Poulet", price: "16,50 €", startRotate: 6 },
+  { img: sigBriocheFromageTresse, categoryId: "brioches", dishKey: "fromageTresse", price: "14,90 €", startRotate: -6 },
+  { img: sigPancakesDubai, categoryId: "pancakes-sucres", dishKey: "dubai", price: "2p 15,00 € · 3p 16,50 €", startRotate: 0 },
+  { img: sigBriochePoulet, categoryId: "brioches", dishKey: "poulet", price: "16,50 €", startRotate: 6 },
 ];
 
 function Index() {
+  const { t } = useTranslation();
   const ref = useReveal();
   const sigRef = useRef<HTMLElement | null>(null);
   const rating = BUSINESS.rating.replace("/5", "");
   const reviewCount = BUSINESS.reviewCount;
+  const testimonials = t("home.reviews.testimonials", { returnObjects: true }) as { name: string; body: string }[];
 
   useEffect(() => {
     if (!sigRef.current) return;
@@ -89,7 +92,7 @@ function Index() {
           loop
           playsInline
           poster={hero}
-          aria-label="Le salon La Magie de Paris, un intérieur ancien aux dorures et au velours grenat"
+          aria-label={t("home.hero.videoAlt")}
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/assets/clip_hero.mp4" type="video/mp4" />
@@ -100,22 +103,22 @@ function Index() {
         <div className="absolute inset-6 sm:inset-10 border border-[color:var(--gold)]/20 pointer-events-none" />
 
         <div className="relative z-10 text-center px-6 max-w-4xl">
-          <div className="eyebrow">Depuis 2022 · Paris 7ᵉ</div>
+          <div className="eyebrow">{t("home.hero.eyebrow")}</div>
           <h1 className="display italic mt-6 text-5xl sm:text-7xl md:text-8xl text-[color:var(--cream)]">
             La Magie<br /><span className="text-[color:var(--gold)]">de Paris</span>
           </h1>
           <Ornament className="mt-8" />
           <p className="mt-6 text-lg sm:text-xl text-[color:var(--cream)]/85 max-w-xl mx-auto font-[family-name:var(--font-body)] italic">
-            Un salon où chaque plat se dresse comme une sculpture, entre les salons de Damas et les cafés parisiens.
+            {t("home.hero.subtitle")}
           </p>
           <div className="mt-10 flex flex-wrap gap-4 justify-center">
-            <Link to="/carte" className="btn btn-gold">Découvrir la carte</Link>
-            <Link to="/infos" className="btn btn-outline">Nous trouver</Link>
+            <Link to="/carte" className="btn btn-gold">{t("home.hero.ctaMenu")}</Link>
+            <Link to="/infos" className="btn btn-outline">{t("home.hero.ctaFind")}</Link>
           </div>
         </div>
 
         <div className="absolute bottom-6 left-0 right-0 text-center eyebrow text-[color:var(--gold)]/70">
-          Tous les jours, de 9h à 17h, sans réservation
+          {t("home.hero.hours")}
         </div>
       </section>
 
@@ -123,33 +126,29 @@ function Index() {
       <section className="py-24 sm:py-32 px-5 sm:px-8">
         <div className="mx-auto max-w-7xl grid md:grid-cols-2 gap-14 md:gap-24 items-center">
           <div className="rise order-2 md:order-1">
-            <div className="eyebrow">La Maison</div>
+            <div className="eyebrow">{t("home.maison.eyebrow")}</div>
             <h2 className="display italic mt-4 text-5xl sm:text-6xl text-[color:var(--cream)]">
-              Un Brunch<br />Sculpté.
+              {t("home.maison.title1")}<br />{t("home.maison.title2")}
             </h2>
             <Ornament className="mt-6 justify-start" />
             <div className="mt-6 space-y-4 text-[color:var(--cream)]/80 leading-relaxed">
-              <p>
-                Ici s'entremêlent le souvenir des salons orientaux et l'esprit des cafés du 7ᵉ arrondissement. Velours grenat, dorures anciennes, marbre veiné : un décor de conte pour prendre le temps, comme autrefois.
-              </p>
-              <p>
-                Rien n'est laissé au hasard. Le chef compose chaque plat un par un, comme on façonnerait une sculpture, avec des produits choisis chaque matin et un café de spécialité torréfié en petits lots.
-              </p>
+              <p>{t("home.maison.p1")}</p>
+              <p>{t("home.maison.p2")}</p>
             </div>
             <div className="mt-10 flex items-center gap-5">
-              <Link to="/infos" className="btn btn-gold">Notre histoire</Link>
-              <span className="eyebrow">Sans réservation</span>
+              <Link to="/infos" className="btn btn-gold">{t("home.maison.cta")}</Link>
+              <span className="eyebrow">{t("home.maison.noRes")}</span>
             </div>
           </div>
           <div className="rise order-1 md:order-2 relative">
-            <Arch src={story} alt="Détail du salon, miroir doré, marbre, chandelles" className="aspect-[4/5] max-w-md mx-auto" />
+            <Arch src={story} alt={t("home.maison.imageAlt")} className="aspect-[4/5] max-w-md mx-auto" />
             {/* rating badge */}
             <div className="absolute -bottom-6 -left-2 sm:left-6 bg-[color:var(--garnet-deep)] border border-[color:var(--gold)] px-5 py-4 shadow-2xl">
               <div className="flex items-center gap-3">
                 <Stars />
                 <div className="text-left">
                   <div className="font-[family-name:var(--font-display)] italic text-2xl text-[color:var(--gold-light)] leading-none">{rating}<span className="text-[color:var(--cream)]/60 text-lg">/5</span></div>
-                  <div className="eyebrow text-[0.6rem] mt-1">{reviewCount} avis Google</div>
+                  <div className="eyebrow text-[0.6rem] mt-1">{reviewCount} {t("common.reviewsSuffix")}</div>
                 </div>
               </div>
             </div>
@@ -165,19 +164,25 @@ function Index() {
             style={{ background: "radial-gradient(circle at 50% 42%, rgba(201,162,75,0.2), transparent 55%)" }}
             aria-hidden
           />
-          <SectionHead eyebrow="Le Plat Signature" title={<>Trois créations, <em>une seule table</em>.</>} />
+          <SectionHead
+            eyebrow={t("home.signature.eyebrow")}
+            title={<>{t("home.signature.titlePre")}<em>{t("home.signature.titleEm")}</em>{t("home.signature.titlePost")}</>}
+          />
           <div className="relative mt-10 sm:mt-16 grid grid-cols-3 gap-3 sm:gap-8 md:gap-12 max-w-5xl w-full">
-            {SIGNATURE_DISHES.map((d) => (
-              <div key={d.name} className="text-center">
-                <Arch src={d.img} alt={d.name} className="sig-dish-arch aspect-[3/4]" />
-                <h3 className="display italic mt-3 sm:mt-4 text-sm sm:text-xl md:text-2xl text-[color:var(--cream)] leading-tight">
-                  {d.name}
-                </h3>
-                <div className="mt-1 font-[family-name:var(--font-label)] text-[color:var(--gold)] tracking-[0.1em] sm:tracking-[0.15em] text-[0.65rem] sm:text-sm">
-                  {d.price}
+            {SIGNATURE_DISHES.map((d) => {
+              const name = t(`carte.dishes.${d.categoryId}.${d.dishKey}.name`);
+              return (
+                <div key={d.dishKey} className="text-center">
+                  <Arch src={d.img} alt={name} className="sig-dish-arch aspect-[3/4]" />
+                  <h3 className="display italic mt-3 sm:mt-4 text-sm sm:text-xl md:text-2xl text-[color:var(--cream)] leading-tight">
+                    {name}
+                  </h3>
+                  <div className="mt-1 font-[family-name:var(--font-label)] text-[color:var(--gold)] tracking-[0.1em] sm:tracking-[0.15em] text-[0.65rem] sm:text-sm">
+                    {d.price}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -185,43 +190,46 @@ function Index() {
       {/* ---------- À VOTRE GOÛT, 4 catégories ---------- */}
       <section className="py-24 sm:py-32 px-5 sm:px-8">
         <SectionHead
-          eyebrow="À votre goût"
-          title={<>Quatre envies, <em>une seule adresse</em>.</>}
+          eyebrow={t("home.cravings.eyebrow")}
+          title={<>{t("home.cravings.titlePre")}<em>{t("home.cravings.titleEm")}</em>{t("home.cravings.titlePost")}</>}
         >
-          <p>Salé, sucré, café : chaque envie a sa page dans la carte.</p>
+          <p>{t("home.cravings.subtitle")}</p>
         </SectionHead>
         <div className="mx-auto max-w-7xl mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10">
-          {CRAVINGS.map((c) => (
-            <Link key={c.cat} to="/carte" search={{ cat: c.cat }} className="rise group relative block">
-              <span
-                aria-hidden
-                className="pointer-events-none select-none absolute -top-8 -left-2 z-10 display italic text-7xl leading-none text-transparent [-webkit-text-stroke:1px_var(--gold-40)]"
-              >
-                {c.n}
-              </span>
-              <Arch src={c.img} alt={c.title} className="aspect-[3/4]" />
-              <div className="mt-5 text-center">
-                <h3 className="display italic text-xl sm:text-2xl text-[color:var(--cream)] group-hover:text-[color:var(--gold-light)] transition-colors">
-                  {c.title}
-                </h3>
-                <div className="mt-3 inline-flex items-center gap-1 font-[family-name:var(--font-label)] text-[color:var(--gold)] group-hover:text-[color:var(--gold-light)] tracking-[0.15em] text-xs uppercase transition-colors">
-                  Découvrir <span aria-hidden>→</span>
+          {CRAVINGS.map((c) => {
+            const title = t(`home.cravings.items.${c.key}`);
+            return (
+              <Link key={c.cat} to="/carte" search={{ cat: c.cat }} className="rise group relative block">
+                <span
+                  aria-hidden
+                  className="pointer-events-none select-none absolute -top-8 -left-2 z-10 display italic text-7xl leading-none text-transparent [-webkit-text-stroke:1px_var(--gold-40)]"
+                >
+                  {c.n}
+                </span>
+                <Arch src={c.img} alt={title} className="aspect-[3/4]" />
+                <div className="mt-5 text-center">
+                  <h3 className="display italic text-xl sm:text-2xl text-[color:var(--cream)] group-hover:text-[color:var(--gold-light)] transition-colors">
+                    {title}
+                  </h3>
+                  <div className="mt-3 inline-flex items-center gap-1 font-[family-name:var(--font-label)] text-[color:var(--gold)] group-hover:text-[color:var(--gold-light)] tracking-[0.15em] text-xs uppercase transition-colors">
+                    {t("common.discover")} <span aria-hidden>→</span>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
         <div className="text-center mt-14">
-          <Link to="/carte" className="btn btn-outline">Voir toute la carte →</Link>
+          <Link to="/carte" className="btn btn-outline">{t("common.seeFullMenu")} →</Link>
         </div>
       </section>
 
       {/* ---------- REVIEWS (cream) ---------- */}
       <section className="py-24 sm:py-32 bg-[color:var(--cream)] text-[color:var(--ink)]">
         <div className="text-center px-5">
-          <div className="eyebrow !text-[color:var(--garnet-mid)]">Ils en parlent</div>
+          <div className="eyebrow !text-[color:var(--garnet-mid)]">{t("home.reviews.eyebrow")}</div>
           <h2 className="display italic mt-4 text-5xl sm:text-6xl text-[color:var(--ink)]">
-            {rating}<span className="text-[color:var(--garnet-mid)]">/5</span> sur <em>{reviewCount} avis</em>
+            {rating}<span className="text-[color:var(--garnet-mid)]">/5</span> <em>{t("home.reviews.suffix", { count: reviewCount })}</em>
           </h2>
           <div className="ornament mt-6 !text-[color:var(--garnet-mid)]" style={{ color: "var(--garnet-mid)" }}>
             <span aria-hidden>✦</span>
@@ -232,23 +240,12 @@ function Index() {
             rel="noreferrer"
             className="btn btn-outline mt-8 !border-[color:var(--garnet-mid)] !text-[color:var(--garnet-mid)] hover:!bg-[color:var(--garnet-mid)]/10"
           >
-            Laisser un avis Google
+            {t("common.reviewButton")}
           </a>
         </div>
         <div className="mt-16 overflow-hidden">
           <div className="reviews-track">
-            {[
-              { name: "Camille R.", body: "Le décor est à couper le souffle. On se croit dans un conte parisien. La brioche saumon est divine." },
-              { name: "Sofia K.", body: "Le meilleur cappuccino du 7ᵉ, et un accueil d'une gentillesse rare. Un incontournable." },
-              { name: "Louis M.", body: "Les pancakes Dubaï sont une révélation. J'y retourne dès demain matin." },
-              { name: "Inès B.", body: "Un salon magnifique, feutré, tout est fait maison. Coup de cœur." },
-              { name: "Théo D.", body: "Ambiance velours et dorures, café de spécialité impeccable. Bravo." },
-              { name: "Nour A.", body: "Comme un salon de Damas transporté à Paris. Merveilleux." },
-            ].concat([
-              { name: "Camille R.", body: "Le décor est à couper le souffle. On se croit dans un conte parisien. La brioche saumon est divine." },
-              { name: "Sofia K.", body: "Le meilleur cappuccino du 7ᵉ, et un accueil d'une gentillesse rare. Un incontournable." },
-              { name: "Louis M.", body: "Les pancakes Dubaï sont une révélation. J'y retourne dès demain matin." },
-            ]).map((r, i) => (
+            {testimonials.concat(testimonials.slice(0, 3)).map((r, i) => (
               <figure key={i} className="w-[230px] sm:w-[380px] shrink-0 border-t border-b border-[color:var(--garnet-mid)]/25 py-8 px-2">
                 <Stars />
                 <blockquote className="mt-3 display italic text-lg sm:text-xl text-[color:var(--ink)] leading-snug line-clamp-3">
@@ -264,13 +261,13 @@ function Index() {
       {/* ---------- ADDRESS + MAP ---------- */}
       <section className="find damask">
         <div className="shead">
-          <span className="eyebrow">Nous trouver</span>
-          <h2>Un salon au cœur du 7ᵉ</h2>
+          <span className="eyebrow">{t("home.find.eyebrow")}</span>
+          <h2>{t("home.find.title")}</h2>
           <Ornament />
         </div>
         <div className="find-in">
           <div className="find-map">
-            <span className="pin"><i />Paris 7ᵉ · Tour Eiffel</span>
+            <span className="pin"><i />{t("home.find.badge")}</span>
             <iframe
               title="Plan, La Magie de Paris"
               src="https://www.openstreetmap.org/export/embed.html?bbox=2.29545%2C48.85548%2C2.31045%2C48.86248&layer=mapnik&marker=48.85898%2C2.30295"
@@ -278,15 +275,15 @@ function Index() {
             />
           </div>
           <div className="find-card">
-            <span className="eyebrow">La Magie de Paris</span>
-            <h2>À deux pas de<br />la Tour Eiffel.</h2>
-            <span className="find-badge"><i />{BUSINESS.metro}</span>
+            <span className="eyebrow">{t("home.find.cardEyebrow")}</span>
+            <h2>{t("home.find.cardTitle1")}<br />{t("home.find.cardTitle2")}</h2>
+            <span className="find-badge"><i />{t("common.metro")}</span>
             <div className="find-rows">
-              <div className="find-row"><span className="k">Adresse</span><span className="v">{BUSINESS.address}</span></div>
-              <div className="find-row"><span className="k">Horaires</span><span className="v">{BUSINESS.hours}<br />Sans réservation</span></div>
-              <div className="find-row"><span className="k">Téléphone</span><span className="v"><a href={BUSINESS.phoneHref}>{BUSINESS.phone}</a></span></div>
+              <div className="find-row"><span className="k">{t("home.find.labels.address")}</span><span className="v">{BUSINESS.address}</span></div>
+              <div className="find-row"><span className="k">{t("home.find.labels.hours")}</span><span className="v">{t("common.hours")}<br />{t("home.maison.noRes")}</span></div>
+              <div className="find-row"><span className="k">{t("home.find.labels.phone")}</span><span className="v"><a href={BUSINESS.phoneHref}>{BUSINESS.phone}</a></span></div>
             </div>
-            <a className="btn btn-gold" href="https://maps.google.com/?q=15+Rue+Dupont+des+Loges,+75007+Paris" target="_blank" rel="noreferrer">Itinéraire →</a>
+            <a className="btn btn-gold" href="https://maps.google.com/?q=15+Rue+Dupont+des+Loges,+75007+Paris" target="_blank" rel="noreferrer">{t("common.itinerary")} →</a>
           </div>
         </div>
       </section>

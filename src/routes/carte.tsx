@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Ornament, SectionHead, useReveal, Arch, BUSINESS } from "@/components/brand";
 import catBrioches from "@/assets/cat-brioches.png";
 import catPancakesSales from "@/assets/cat-pancakes-sales.png";
@@ -41,8 +42,7 @@ export const Route = createFileRoute("/carte")({
 });
 
 type Dish = {
-  name: string;
-  desc?: string;
+  key: string;
   price: string;
   img?: string;
   signature?: boolean;
@@ -50,131 +50,125 @@ type Dish = {
   vegetarian?: boolean;
   lactoseFree?: boolean;
 };
-type Category = { id: string; roman: string; label: string; kind: "food" | "drink"; img: string; dishes: Dish[]; note?: string };
+type Category = { id: string; roman: string; kind: "food" | "drink"; img: string; dishes: Dish[]; noteKey?: string };
 
 const CATEGORIES: Category[] = [
   {
     id: "brioches",
     roman: "I.",
-    label: "Brioches Toastées",
     kind: "food",
     img: catBrioches,
     dishes: [
-      { name: "Brioche Toastée au Houmous", desc: "Purée de pois chiches, citron, curcuma, poivre sauvage, pousses d'épinards, roquette, mélasse de grenade, tomates, concombre, brioche maison chaude.", price: "14,90 €", img: briocheHoumous, glutenFree: false, vegetarian: true, lactoseFree: false },
-      { name: "Brioche Toastée au Saumon", desc: "Purée d'avocat, saumon fumé, pousses d'épinards, roquette, œuf poché de plein air, sauce hollandaise, brioche maison chaude.", price: "14,90 €", img: briocheSaumon, signature: true, glutenFree: false, vegetarian: false, lactoseFree: false },
-      { name: "Brioche Toastée aux Crevettes", desc: "Purée d'avocat, crevettes, ciboulette, aneth, citron, sauce blanche maison, pousses d'épinards, roquette, œuf poché de plein air, brioche maison chaude.", price: "18,90 €", img: briocheCrevettes, glutenFree: false, vegetarian: false, lactoseFree: false },
-      { name: "Brioche Toastée Fromage Tressé", desc: "Purée d'avocat, pesto, fromage tressé, tomates cerises, tomates confites, œuf poché de plein air, pousses d'épinards, roquette, sauce hollandaise, brioche maison chaude.", price: "14,90 €", img: briocheFromageTresse, glutenFree: false, vegetarian: true, lactoseFree: false },
-      { name: "Brioche Toastée Poulet", desc: "Purée d'avocat, filet de poulet rôti, pickles, pesto, tomates séchées, pousses d'épinards, sauce hollandaise à la truffe, brioche maison chaude.", price: "16,50 €", img: briochePoulet, glutenFree: false, vegetarian: false, lactoseFree: false },
-      { name: "Brioche Toastée à la Truffe", desc: "Purée d'avocat, champignons sautés à la truffe, pousses d'épinards, roquette, œuf poché de plein air, sauce hollandaise, brioche maison chaude.", price: "18,90 €", img: briocheTruffe, glutenFree: false, vegetarian: true, lactoseFree: false },
-      { name: "Brioche Toastée au Labneh", desc: "Avocat, labneh, tomates cerises, concombre, menthe, roquette, huile d'olive, paprika, œuf poché de plein air, brioche maison chaude.", price: "13,90 €", img: briocheLabneh, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { key: "houmous", price: "14,90 €", img: briocheHoumous, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { key: "saumon", price: "14,90 €", img: briocheSaumon, signature: true, glutenFree: false, vegetarian: false, lactoseFree: false },
+      { key: "crevettes", price: "18,90 €", img: briocheCrevettes, glutenFree: false, vegetarian: false, lactoseFree: false },
+      { key: "fromageTresse", price: "14,90 €", img: briocheFromageTresse, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { key: "poulet", price: "16,50 €", img: briochePoulet, glutenFree: false, vegetarian: false, lactoseFree: false },
+      { key: "truffe", price: "18,90 €", img: briocheTruffe, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { key: "labneh", price: "13,90 €", img: briocheLabneh, glutenFree: false, vegetarian: true, lactoseFree: false },
     ],
   },
   {
     id: "pancakes-sales",
     roman: "II.",
-    label: "Pancakes Salés",
     kind: "food",
     img: catPancakesSales,
     dishes: [
-      { name: "Pancakes Saumon", desc: "Purée d'avocat, sirop d'érable, saumon fumé, épinards frais, œuf poché de plein air.", price: "2p 13,90 € · 3p 15,50 €", img: pancakesSaumon, glutenFree: false, vegetarian: false, lactoseFree: false },
-      { name: "Pancakes Crevettes", desc: "Purée d'avocat, sirop d'érable, crevettes, ciboulette, aneth, citron, sauce blanche maison, pousses d'épinards, roquette, œuf poché de plein air.", price: "18,90 €", img: pancakesCrevettes, glutenFree: false, vegetarian: false, lactoseFree: false },
-      { name: "Pancakes Labneh", desc: "Avocat, labneh, tomates cerises, concombre, menthe, roquette, huile d'olive, paprika, œuf poché de plein air.", price: "13,90 €", img: pancakesLabneh, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { key: "saumon", price: "2p 13,90 € · 3p 15,50 €", img: pancakesSaumon, glutenFree: false, vegetarian: false, lactoseFree: false },
+      { key: "crevettes", price: "18,90 €", img: pancakesCrevettes, glutenFree: false, vegetarian: false, lactoseFree: false },
+      { key: "labneh", price: "13,90 €", img: pancakesLabneh, glutenFree: false, vegetarian: true, lactoseFree: false },
     ],
-    note: "Suppléments : purée d'avocat +3 € · crevettes ou saumon +4 € · œuf poché +1,50 €",
+    noteKey: "pancakes-sales",
   },
   {
     id: "pancakes-sucres",
     roman: "III.",
-    label: "Pancakes Sucrés",
     kind: "food",
     img: catPancakesSucres,
     dishes: [
-      { name: "Pancakes Crème de Noisette", desc: "Crème de noisette maison, sirop d'érable, sauce chocolat, amandes torréfiées, chantilly à la vanille de Madagascar.", price: "2p 13,00 € · 3p 14,50 €", img: pancakesNoisette, glutenFree: false, vegetarian: true, lactoseFree: false },
-      { name: "Pancakes aux Fruits Frais", desc: "Sirop d'érable, fruits frais de saison, amandes torréfiées, chantilly à la vanille de Madagascar.", price: "2p 13,00 € · 3p 14,50 €", img: pancakesFruitsFrais, glutenFree: false, vegetarian: true, lactoseFree: false },
-      { name: "Pancakes Dubaï", desc: "Crème pistache maison, sirop d'érable, sauce chocolat, pistaches torréfiées, kunafa grillée, chantilly à la vanille de Madagascar.", price: "2p 15,00 € · 3p 16,50 €", img: pancakesDubai, signature: true, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { key: "cremeNoisette", price: "2p 13,00 € · 3p 14,50 €", img: pancakesNoisette, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { key: "fruitsFrais", price: "2p 13,00 € · 3p 14,50 €", img: pancakesFruitsFrais, glutenFree: false, vegetarian: true, lactoseFree: false },
+      { key: "dubai", price: "2p 15,00 € · 3p 16,50 €", img: pancakesDubai, signature: true, glutenFree: false, vegetarian: true, lactoseFree: false },
     ],
   },
   {
     id: "cookies",
     roman: "IV.",
-    label: "Cookies & Douceurs",
     kind: "food",
     img: catCookiesDouceurs,
     dishes: [
-      { name: "Cookie Noix de Pécan, Chocolat au Lait & Fleur de Sel", price: "4,00 €", glutenFree: false, vegetarian: true, lactoseFree: false },
-      { name: "Cookie Pistache & Chocolat au Lait", price: "4,00 €", glutenFree: false, vegetarian: true, lactoseFree: false },
-      { name: "Cookie Chocolat Noir & Blanc, Fleur de Sel", price: "3,50 €", glutenFree: false, vegetarian: true, lactoseFree: false },
-      { name: "Croissant", price: "2,00 €", glutenFree: false, vegetarian: true, lactoseFree: false },
+      { key: "pecan", price: "4,00 €", glutenFree: false, vegetarian: true, lactoseFree: false },
+      { key: "pistache", price: "4,00 €", glutenFree: false, vegetarian: true, lactoseFree: false },
+      { key: "chocoBlancNoir", price: "3,50 €", glutenFree: false, vegetarian: true, lactoseFree: false },
+      { key: "croissant", price: "2,00 €", glutenFree: false, vegetarian: true, lactoseFree: false },
     ],
   },
   {
     id: "chaudes",
     roman: "V.",
-    label: "Boissons Chaudes",
     kind: "drink",
     img: catChaudes,
     dishes: [
-      { name: "Espresso / Café Allongé", price: "2,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
-      { name: "Double Espresso", price: "4,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
-      { name: "Americano", desc: "Double dose.", price: "4,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
-      { name: "Macchiato", price: "3,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Flat White", desc: "Double espresso.", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Latte", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Cappuccino", price: "4,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Chaï Latte Café", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Chaï Latte", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Matcha Latte", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Matcha Latte au Sésame Noir", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Matcha Latte au Collagène & Sésame Noir", price: "6,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Café Mocha au Chocolat", desc: "Fait maison.", price: "7,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Chocolat Chaud Viennois", desc: "Fait maison.", price: "7,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Chocolat Chaud", desc: "Fait maison.", price: "4,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Thé & Infusions", desc: "Demandez à votre barista. Au choix : thé vert sencha, thé vert à la menthe, thé noir breakfast, thé noir earl grey, infusion rooibos vahiné.", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { key: "espresso", price: "2,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { key: "doubleEspresso", price: "4,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { key: "americano", price: "4,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { key: "macchiato", price: "3,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "flatWhite", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "latte", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "cappuccino", price: "4,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "chaiLatteCafe", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "chaiLatte", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "matchaLatte", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "matchaLatteSesame", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "matchaLatteCollagene", price: "6,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "mochaChocolat", price: "7,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "chocolatViennois", price: "7,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "chocolatChaud", price: "4,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "theInfusions", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
     ],
-    note: "Suppléments : double shot +0,50 € · lait végétal (avoine, coco, amande) +0,50 € · sirop caramel, vanille ou noisette +0,50 €",
+    noteKey: "chaudesGlacees",
   },
   {
     id: "fraiches",
     roman: "VI.",
-    label: "Boissons Fraîches",
     kind: "drink",
     img: catFraiches,
     dishes: [
-      { name: "Virgin Mojito", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
-      { name: "Virgin Mojito Fraise", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
-      { name: "Jus d'Orange Hibiscus", desc: "Orange, hibiscus et fleur d'oranger.", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
-      { name: "Jus de Grenade Bio", desc: "Sans sucres ajoutés.", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
-      { name: "Jus d'Orange Pressé", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
-      { name: "Eau Minérale", price: "2,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
-      { name: "Eau Gazeuse (Perrier)", price: "4,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
-      { name: "Coca-Cola", price: "3,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { key: "virginMojito", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { key: "virginMojitoFraise", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { key: "jusOrangeHibiscus", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { key: "jusGrenadeBio", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { key: "jusOrangePresse", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { key: "eauMinerale", price: "2,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { key: "eauGazeuse", price: "4,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { key: "cocaCola", price: "3,50 €", glutenFree: true, vegetarian: true, lactoseFree: true },
     ],
   },
   {
     id: "glacees",
     roman: "VII.",
-    label: "Boissons Glacées",
     kind: "drink",
     img: catGlacees,
     dishes: [
-      { name: "Matcha Latte Glacé", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Matcha Latte Glacé Fraise", desc: "Le latte signature de la maison.", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Matcha Latte Glacé au Sésame Noir", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Matcha Latte Glacé au Collagène & Sésame Noir", price: "6,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Thé Glacé Pêche", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
-      { name: "Américano Glacé", price: "4,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
-      { name: "Flat White Glacé", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Latte Glacé", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Chaï Latte Café Glacé", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Chaï Latte Glacé", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Chocolat Glacé", price: "7,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
-      { name: "Mocha Chocolat Glacé", price: "7,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "matchaLatteGlace", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "matchaLatteGlaceFraise", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "matchaLatteGlaceSesame", price: "6,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "matchaLatteGlaceCollagene", price: "6,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "theGlacePeche", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { key: "americanoGlace", price: "4,00 €", glutenFree: true, vegetarian: true, lactoseFree: true },
+      { key: "flatWhiteGlace", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "latteGlace", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "chaiLatteCafeGlace", price: "5,50 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "chaiLatteGlace", price: "5,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "chocolatGlace", price: "7,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
+      { key: "mochaChocolatGlace", price: "7,00 €", glutenFree: true, vegetarian: true, lactoseFree: false },
     ],
-    note: "Suppléments : double shot +0,50 € · lait végétal (avoine, coco, amande) +0,50 € · sirop caramel, vanille ou noisette +0,50 €",
+    noteKey: "chaudesGlacees",
   },
 ];
 
 function CartePage() {
+  const { t } = useTranslation();
   const { cat } = Route.useSearch();
   const initial = CATEGORIES.some((c) => c.id === cat) ? (cat as string) : CATEGORIES[0].id;
   const [active, setActive] = useState<string>(initial);
@@ -188,16 +182,18 @@ function CartePage() {
   });
   const anyFilterActive = filters.glutenFree || filters.vegetarian || filters.lactoseFree;
   const ref = useReveal();
+  const dishName = (categoryId: string, key: string) => t(`carte.dishes.${categoryId}.${key}.name`);
+  const dishDesc = (categoryId: string, key: string) => t(`carte.dishes.${categoryId}.${key}.desc`, { defaultValue: "" });
 
   return (
     <div ref={ref} className="bg-damask">
       {/* Header */}
       <section className="pt-20 pb-16 px-5 sm:px-8 text-center hairline-b">
         <SectionHead
-          eyebrow="La Carte"
-          title={<>Tout est <em>fait maison</em>.</>}
+          eyebrow={t("carte.header.eyebrow")}
+          title={<>{t("carte.header.titlePre")}<em>{t("carte.header.titleEm")}</em>{t("carte.header.titlePost")}</>}
         >
-          <p>Chaque plat est une petite sculpture, composée sur place avec des produits choisis chaque matin.</p>
+          <p>{t("carte.header.subtitle")}</p>
         </SectionHead>
         <a
           href={BUSINESS.googleReviewUrl}
@@ -205,7 +201,7 @@ function CartePage() {
           rel="noreferrer"
           className="btn btn-outline mt-8 inline-flex"
         >
-          Laisser un avis Google
+          {t("common.reviewButton")}
         </a>
       </section>
 
@@ -214,7 +210,7 @@ function CartePage() {
         <div
           className="md:hidden sticky top-[77px] z-30 -mx-5 px-5 py-3 flex gap-4 overflow-x-auto bg-[color:var(--garnet)] hairline-b"
           role="tablist"
-          aria-label="Catégories"
+          aria-label={t("carte.categoriesLabel")}
         >
           {CATEGORIES.map((c) => {
             const isActive = c.id === active;
@@ -235,7 +231,7 @@ function CartePage() {
                   <img src={c.img} alt="" loading="lazy" />
                 </div>
                 <span className="cat-label font-[family-name:var(--font-label)] uppercase tracking-[0.2em] text-[0.6rem] text-[color:var(--cream)]/70 text-center leading-tight">
-                  {c.label}
+                  {t(`carte.categoryLabels.${c.id}`)}
                 </span>
               </button>
             );
@@ -244,7 +240,7 @@ function CartePage() {
 
         <div className="grid md:grid-cols-[260px_1fr] gap-10 lg:gap-16 mt-10 md:mt-0">
           {/* Desktop left rail */}
-          <aside className="hidden md:block sticky top-28 self-start" role="tablist" aria-label="Catégories">
+          <aside className="hidden md:block sticky top-28 self-start" role="tablist" aria-label={t("carte.categoriesLabel")}>
             <ul className="flex flex-col gap-3">
               {CATEGORIES.map((c) => {
                 const isActive = c.id === active;
@@ -267,7 +263,7 @@ function CartePage() {
                       <div>
                         <div className="font-[family-name:var(--font-label)] text-[color:var(--gold)] text-xs tracking-[0.2em]">{c.roman}</div>
                         <div className="cat-label font-[family-name:var(--font-display)] italic text-2xl text-[color:var(--cream)] group-hover:text-[color:var(--gold-light)] transition-colors">
-                          {c.label}
+                          {t(`carte.categoryLabels.${c.id}`)}
                         </div>
                       </div>
                     </button>
@@ -282,14 +278,14 @@ function CartePage() {
             <div className="flex flex-wrap items-baseline justify-between gap-4">
               <div className="flex items-baseline gap-4">
                 <span className="font-[family-name:var(--font-label)] text-[color:var(--gold)] tracking-[0.25em]">{current.roman}</span>
-                <h2 className="display italic text-4xl sm:text-5xl text-[color:var(--cream)]">{current.label}</h2>
+                <h2 className="display italic text-4xl sm:text-5xl text-[color:var(--cream)]">{t(`carte.categoryLabels.${current.id}`)}</h2>
               </div>
               <div className="flex flex-wrap gap-2 shrink-0">
                 {(
                   [
-                    { key: "glutenFree", label: "Sans gluten" },
-                    { key: "vegetarian", label: "Végétarien" },
-                    { key: "lactoseFree", label: "Sans lactose" },
+                    { key: "glutenFree", label: t("carte.filters.glutenFree") },
+                    { key: "vegetarian", label: t("carte.filters.vegetarian") },
+                    { key: "lactoseFree", label: t("carte.filters.lactoseFree") },
                   ] as const
                 ).map((f) => {
                   const on = filters[f.key];
@@ -315,59 +311,64 @@ function CartePage() {
 
             {dishes.length === 0 ? (
               <p className="mt-12 text-[color:var(--cream)]/60 italic">
-                {anyFilterActive
-                  ? "Aucun plat ne correspond à ces filtres dans cette catégorie. Essayez une autre catégorie ou retirez un filtre."
-                  : "Aucun plat dans cette catégorie pour le moment."}
+                {anyFilterActive ? t("carte.empty.filtered") : t("carte.empty.none")}
               </p>
             ) : current.kind === "food" ? (
               <div className="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-12">
-                {dishes.map((d) => (
-                  <article key={d.name} className="rise flex gap-5 items-start">
-                    {d.img ? (
-                      <div className="w-24 sm:w-28 shrink-0">
-                        <Arch src={d.img} alt={d.name} className="aspect-[3/4]" thin />
-                      </div>
-                    ) : null}
-                    <div className="flex-1 min-w-0 pt-1">
-                      {d.signature ? (
-                        <div className="eyebrow text-[0.6rem] mb-1">Signature</div>
+                {dishes.map((d) => {
+                  const name = dishName(current.id, d.key);
+                  const desc = dishDesc(current.id, d.key);
+                  return (
+                    <article key={d.key} className="rise flex gap-5 items-start">
+                      {d.img ? (
+                        <div className="w-24 sm:w-28 shrink-0">
+                          <Arch src={d.img} alt={name} className="aspect-[3/4]" thin />
+                        </div>
                       ) : null}
-                      <div className="leader">
-                        <span className="dish font-[family-name:var(--font-display)] italic text-xl leading-tight">{d.name}</span>
-                        <span className="dots" aria-hidden />
-                        <span className="price">{d.price}</span>
+                      <div className="flex-1 min-w-0 pt-1">
+                        {d.signature ? (
+                          <div className="eyebrow text-[0.6rem] mb-1">{t("common.signature")}</div>
+                        ) : null}
+                        <div className="leader">
+                          <span className="dish font-[family-name:var(--font-display)] italic text-xl leading-tight">{name}</span>
+                          <span className="dots" aria-hidden />
+                          <span className="price">{d.price}</span>
+                        </div>
+                        {desc ? (
+                          <p className="mt-2 text-[color:var(--cream)]/70 text-sm italic">{desc}</p>
+                        ) : null}
                       </div>
-                      {d.desc ? (
-                        <p className="mt-2 text-[color:var(--cream)]/70 text-sm italic">{d.desc}</p>
-                      ) : null}
-                    </div>
-                  </article>
-                ))}
+                    </article>
+                  );
+                })}
               </div>
             ) : (
               <div className="mt-12 grid sm:grid-cols-2 gap-x-14 gap-y-5">
-                {dishes.map((d) => (
-                  <div key={d.name} className="rise">
-                    <div className="leader">
-                      <span className="dish font-[family-name:var(--font-display)] italic text-xl">{d.name}</span>
-                      <span className="dots" aria-hidden />
-                      <span className="price">{d.price}</span>
+                {dishes.map((d) => {
+                  const name = dishName(current.id, d.key);
+                  const desc = dishDesc(current.id, d.key);
+                  return (
+                    <div key={d.key} className="rise">
+                      <div className="leader">
+                        <span className="dish font-[family-name:var(--font-display)] italic text-xl">{name}</span>
+                        <span className="dots" aria-hidden />
+                        <span className="price">{d.price}</span>
+                      </div>
+                      {desc ? (
+                        <p className="mt-1 text-[color:var(--cream)]/60 text-xs italic">{desc}</p>
+                      ) : null}
                     </div>
-                    {d.desc ? (
-                      <p className="mt-1 text-[color:var(--cream)]/60 text-xs italic">{d.desc}</p>
-                    ) : null}
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             )}
 
-            {current.note ? (
-              <p className="mt-10 text-xs text-[color:var(--gold-light)]/80 italic">{current.note}</p>
+            {current.noteKey ? (
+              <p className="mt-10 text-xs text-[color:var(--gold-light)]/80 italic">{t(`carte.notes.${current.noteKey}`)}</p>
             ) : null}
 
             <p className="mt-16 text-xs text-[color:var(--cream)]/50 italic border-t border-[color:var(--gold)]/25 pt-6">
-              Allergènes : la liste des allergènes présents dans nos plats est disponible sur demande.
-              Tous nos plats sont préparés sur place ; des traces peuvent subsister. Prix service compris.
+              {t("carte.allergens")}
             </p>
           </div>
         </div>

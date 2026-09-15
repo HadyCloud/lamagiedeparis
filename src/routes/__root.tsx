@@ -8,21 +8,24 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Nav, Footer, Ticker } from "@/components/brand";
+import i18n, { applyDetectedLanguage } from "@/i18n";
 
 function NotFoundComponent() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-damask-deep flex items-center justify-center px-6">
       <div className="max-w-md text-center">
-        <div className="eyebrow">Introuvable</div>
-        <h1 className="display italic text-7xl mt-4 text-[color:var(--cream)]">404</h1>
+        <div className="eyebrow">{t("notFound.eyebrow")}</div>
+        <h1 className="display italic text-7xl mt-4 text-[color:var(--cream)]">{t("notFound.title")}</h1>
         <p className="mt-4 text-[color:var(--cream)]/70">
-          Cette page n'existe plus. Retournons au salon.
+          {t("notFound.text")}
         </p>
-        <Link to="/" className="btn btn-gold mt-8 inline-flex">Retour à l'accueil</Link>
+        <Link to="/" className="btn btn-gold mt-8 inline-flex">{t("notFound.cta")}</Link>
       </div>
     </div>
   );
@@ -31,6 +34,7 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
+  const { t } = useTranslation();
   useEffect(() => {
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
@@ -38,19 +42,19 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="min-h-screen bg-damask-deep flex items-center justify-center px-6">
       <div className="max-w-md text-center">
-        <div className="eyebrow">Une contrariété</div>
-        <h1 className="display italic text-4xl mt-4 text-[color:var(--cream)]">Cette page n'a pas su se présenter</h1>
+        <div className="eyebrow">{t("errorPage.eyebrow")}</div>
+        <h1 className="display italic text-4xl mt-4 text-[color:var(--cream)]">{t("errorPage.title")}</h1>
         <p className="mt-4 text-[color:var(--cream)]/70">
-          Rafraîchissez la page ou revenez à l'accueil.
+          {t("errorPage.text")}
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <button
             onClick={() => { router.invalidate(); reset(); }}
             className="btn btn-gold"
           >
-            Réessayer
+            {t("errorPage.retry")}
           </button>
-          <a href="/" className="btn btn-outline">Accueil</a>
+          <a href="/" className="btn btn-outline">{t("errorPage.home")}</a>
         </div>
       </div>
     </div>
@@ -135,6 +139,18 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    applyDetectedLanguage();
+    const onChange = (lng: string) => {
+      document.documentElement.lang = lng;
+    };
+    i18n.on("languageChanged", onChange);
+    document.documentElement.lang = i18n.language;
+    return () => {
+      i18n.off("languageChanged", onChange);
+    };
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

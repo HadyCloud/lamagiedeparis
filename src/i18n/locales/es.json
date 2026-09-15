@@ -1,0 +1,237 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "menu": "La Carta",
+    "infos": "Info",
+    "openMenu": "Abrir el menú",
+    "closeMenu": "Cerrar el menú",
+    "backHome": "Volver al inicio, La Magie de Paris"
+  },
+  "ticker": ["La Magie de Paris", "Brunch casero", "Café de especialidad", "Sin reserva", "9h a 17h"],
+  "footer": {
+    "description": "Un salón hechizante, donde cada plato se compone a mano, todos los días, sin reserva.",
+    "address": "Dirección",
+    "contact": "Contacto",
+    "location": "París · distrito 7"
+  },
+  "notFound": {
+    "eyebrow": "No encontrado",
+    "title": "404",
+    "text": "Esta página ya no existe. Volvamos al salón.",
+    "cta": "Volver al inicio"
+  },
+  "errorPage": {
+    "eyebrow": "Un contratiempo",
+    "title": "Esta página no ha podido presentarse",
+    "text": "Actualiza la página o vuelve al inicio.",
+    "retry": "Reintentar",
+    "home": "Inicio"
+  },
+  "common": {
+    "reviewButton": "Dejar una reseña en Google",
+    "reviewsSuffix": "reseñas de Google",
+    "discover": "Descubrir",
+    "seeFullMenu": "Ver toda la carta",
+    "itinerary": "Cómo llegar",
+    "signature": "Signature",
+    "hours": "Todos los días, de 9h a 17h",
+    "metro": "École Militaire, línea 8",
+    "stars": "{{count}} estrellas"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Desde 2022 · París 7.º",
+      "videoAlt": "El salón La Magie de Paris, un interior antiguo de dorados y terciopelo granate",
+      "subtitle": "Un salón donde cada plato se alza como una escultura, entre los salones de Damasco y los cafés parisinos.",
+      "ctaMenu": "Descubrir la carta",
+      "ctaFind": "Cómo encontrarnos",
+      "hours": "Todos los días, de 9h a 17h, sin reserva"
+    },
+    "maison": {
+      "eyebrow": "La Casa",
+      "title1": "Un Brunch",
+      "title2": "Esculpido.",
+      "p1": "Aquí se entrelazan el recuerdo de los salones orientales y el espíritu de los cafés del distrito 7. Terciopelo granate, dorados antiguos, mármol veteado: un decorado de cuento para tomarse el tiempo, como antaño.",
+      "p2": "Nada se deja al azar. El chef compone cada plato uno por uno, como quien moldea una escultura, con productos elegidos cada mañana y un café de especialidad tostado en pequeños lotes.",
+      "cta": "Nuestra historia",
+      "noRes": "Sin reserva",
+      "imageAlt": "Detalle del salón, espejo dorado, mármol, velas"
+    },
+    "signature": {
+      "eyebrow": "El Plato Insignia",
+      "titlePre": "Tres creaciones, ",
+      "titleEm": "una sola mesa",
+      "titlePost": "."
+    },
+    "cravings": {
+      "eyebrow": "A Tu Gusto",
+      "titlePre": "Cuatro antojos, ",
+      "titleEm": "una sola dirección",
+      "titlePost": ".",
+      "subtitle": "Salado, dulce, café: cada antojo tiene su página en la carta.",
+      "items": { "sale": "Salado", "sucre": "Dulce", "cafe": "Café", "fraicheurs": "Frescor" }
+    },
+    "reviews": {
+      "eyebrow": "Hablan de Nosotros",
+      "suffix": "de {{count}} reseñas",
+      "testimonials": [
+        { "name": "Camille R.", "body": "La decoración quita el aliento. Se siente como un cuento parisino. La brioche de salmón es divina." },
+        { "name": "Sofia K.", "body": "El mejor capuchino del distrito 7, y una acogida de una amabilidad poco común. Imprescindible." },
+        { "name": "Louis M.", "body": "Los pancakes Dubái son una revelación. Vuelvo mañana mismo por la mañana." },
+        { "name": "Inès B.", "body": "Un salón precioso y acogedor, todo casero. Un flechazo total." },
+        { "name": "Théo D.", "body": "Ambiente de terciopelo y dorados, café de especialidad impecable. Bravo." },
+        { "name": "Nour A.", "body": "Como un salón de Damasco trasladado a París. Maravilloso." }
+      ]
+    },
+    "find": {
+      "eyebrow": "Cómo Encontrarnos",
+      "title": "Un salón en el corazón del distrito 7",
+      "badge": "París 7.º · Torre Eiffel",
+      "cardEyebrow": "La Magie de Paris",
+      "cardTitle1": "A pasos de",
+      "cardTitle2": "la Torre Eiffel.",
+      "labels": { "address": "Dirección", "hours": "Horario", "phone": "Teléfono" }
+    }
+  },
+  "carte": {
+    "header": {
+      "eyebrow": "La Carta",
+      "titlePre": "Todo es ",
+      "titleEm": "casero",
+      "titlePost": ".",
+      "subtitle": "Cada plato es una pequeña escultura, compuesta en el momento con productos elegidos cada mañana."
+    },
+    "categoriesLabel": "Categorías",
+    "filters": { "glutenFree": "Sin gluten", "vegetarian": "Vegetariano", "lactoseFree": "Sin lactosa" },
+    "empty": {
+      "filtered": "Ningún plato coincide con estos filtros en esta categoría. Prueba otra categoría o quita un filtro.",
+      "none": "No hay platos en esta categoría por el momento."
+    },
+    "allergens": "Alérgenos: la lista de alérgenos presentes en nuestros platos está disponible bajo petición. Todos nuestros platos se preparan en el local; pueden quedar trazas. Precio con servicio incluido.",
+    "categoryLabels": {
+      "brioches": "Brioches Tostadas",
+      "pancakes-sales": "Pancakes Salados",
+      "pancakes-sucres": "Pancakes Dulces",
+      "cookies": "Cookies y Dulces",
+      "chaudes": "Bebidas Calientes",
+      "fraiches": "Bebidas Frescas",
+      "glacees": "Bebidas Heladas"
+    },
+    "notes": {
+      "pancakes-sales": "Suplementos: puré de aguacate +3 € · gambas o salmón +4 € · huevo escalfado +1,50 €",
+      "chaudesGlacees": "Suplementos: doble shot +0,50 € · leche vegetal (avena, coco, almendra) +0,50 € · sirope de caramelo, vainilla o avellana +0,50 €"
+    },
+    "dishes": {
+      "brioches": {
+        "houmous": { "name": "Brioche Tostada con Hummus", "desc": "Puré de garbanzos, limón, cúrcuma, pimienta silvestre, brotes de espinaca, rúcula, melaza de granada, tomates, pepino, brioche casera caliente." },
+        "saumon": { "name": "Brioche Tostada con Salmón", "desc": "Puré de aguacate, salmón ahumado, brotes de espinaca, rúcula, huevo escalfado campero, salsa holandesa, brioche casera caliente." },
+        "crevettes": { "name": "Brioche Tostada con Gambas", "desc": "Puré de aguacate, gambas, cebollino, eneldo, limón, salsa blanca casera, brotes de espinaca, rúcula, huevo escalfado campero, brioche casera caliente." },
+        "fromageTresse": { "name": "Brioche Tostada con Queso Trenzado", "desc": "Puré de aguacate, pesto, queso trenzado, tomates cherry, tomates confitados, huevo escalfado campero, brotes de espinaca, rúcula, salsa holandesa, brioche casera caliente." },
+        "poulet": { "name": "Brioche Tostada con Pollo", "desc": "Puré de aguacate, filete de pollo asado, pepinillos encurtidos, pesto, tomates secos, brotes de espinaca, salsa holandesa a la trufa, brioche casera caliente." },
+        "truffe": { "name": "Brioche Tostada con Trufa", "desc": "Puré de aguacate, champiñones salteados a la trufa, brotes de espinaca, rúcula, huevo escalfado campero, salsa holandesa, brioche casera caliente." },
+        "labneh": { "name": "Brioche Tostada con Labneh", "desc": "Aguacate, labneh, tomates cherry, pepino, menta, rúcula, aceite de oliva, pimentón, huevo escalfado campero, brioche casera caliente." }
+      },
+      "pancakes-sales": {
+        "saumon": { "name": "Pancakes de Salmón", "desc": "Puré de aguacate, sirope de arce, salmón ahumado, espinacas frescas, huevo escalfado campero." },
+        "crevettes": { "name": "Pancakes de Gambas", "desc": "Puré de aguacate, sirope de arce, gambas, cebollino, eneldo, limón, salsa blanca casera, brotes de espinaca, rúcula, huevo escalfado campero." },
+        "labneh": { "name": "Pancakes de Labneh", "desc": "Aguacate, labneh, tomates cherry, pepino, menta, rúcula, aceite de oliva, pimentón, huevo escalfado campero." }
+      },
+      "pancakes-sucres": {
+        "cremeNoisette": { "name": "Pancakes de Crema de Avellana", "desc": "Crema de avellana casera, sirope de arce, salsa de chocolate, almendras tostadas, nata montada de vainilla de Madagascar." },
+        "fruitsFrais": { "name": "Pancakes con Frutas Frescas", "desc": "Sirope de arce, frutas frescas de temporada, almendras tostadas, nata montada de vainilla de Madagascar." },
+        "dubai": { "name": "Pancakes Dubái", "desc": "Crema de pistacho casera, sirope de arce, salsa de chocolate, pistachos tostados, kunafa tostada, nata montada de vainilla de Madagascar." }
+      },
+      "cookies": {
+        "pecan": { "name": "Cookie de Nuez Pecana, Chocolate con Leche y Flor de Sal" },
+        "pistache": { "name": "Cookie de Pistacho y Chocolate con Leche" },
+        "chocoBlancNoir": { "name": "Cookie de Chocolate Negro y Blanco, Flor de Sal" },
+        "croissant": { "name": "Croissant" }
+      },
+      "chaudes": {
+        "espresso": { "name": "Espresso / Café Largo" },
+        "doubleEspresso": { "name": "Doble Espresso" },
+        "americano": { "name": "Americano", "desc": "Doble dosis." },
+        "macchiato": { "name": "Macchiato" },
+        "flatWhite": { "name": "Flat White", "desc": "Doble espresso." },
+        "latte": { "name": "Latte" },
+        "cappuccino": { "name": "Cappuccino" },
+        "chaiLatteCafe": { "name": "Chai Latte con Café" },
+        "chaiLatte": { "name": "Chai Latte" },
+        "matchaLatte": { "name": "Matcha Latte" },
+        "matchaLatteSesame": { "name": "Matcha Latte con Sésamo Negro" },
+        "matchaLatteCollagene": { "name": "Matcha Latte con Colágeno y Sésamo Negro" },
+        "mochaChocolat": { "name": "Café Mocha con Chocolate", "desc": "Casero." },
+        "chocolatViennois": { "name": "Chocolate Caliente Vienés", "desc": "Casero." },
+        "chocolatChaud": { "name": "Chocolate Caliente", "desc": "Casero." },
+        "theInfusions": { "name": "Té e Infusiones", "desc": "Pregunta a tu barista. A elegir: té verde sencha, té verde a la menta, té negro breakfast, té negro earl grey, infusión de rooibos vahiné." }
+      },
+      "fraiches": {
+        "virginMojito": { "name": "Virgin Mojito" },
+        "virginMojitoFraise": { "name": "Virgin Mojito de Fresa" },
+        "jusOrangeHibiscus": { "name": "Zumo de Naranja e Hibisco", "desc": "Naranja, hibisco y flor de azahar." },
+        "jusGrenadeBio": { "name": "Zumo de Granada Ecológico", "desc": "Sin azúcares añadidos." },
+        "jusOrangePresse": { "name": "Zumo de Naranja Natural" },
+        "eauMinerale": { "name": "Agua Mineral" },
+        "eauGazeuse": { "name": "Agua con Gas (Perrier)" },
+        "cocaCola": { "name": "Coca-Cola" }
+      },
+      "glacees": {
+        "matchaLatteGlace": { "name": "Matcha Latte Frío" },
+        "matchaLatteGlaceFraise": { "name": "Matcha Latte Frío de Fresa", "desc": "El latte insignia de la casa." },
+        "matchaLatteGlaceSesame": { "name": "Matcha Latte Frío con Sésamo Negro" },
+        "matchaLatteGlaceCollagene": { "name": "Matcha Latte Frío con Colágeno y Sésamo Negro" },
+        "theGlacePeche": { "name": "Té Frío de Melocotón" },
+        "americanoGlace": { "name": "Americano Frío" },
+        "flatWhiteGlace": { "name": "Flat White Frío" },
+        "latteGlace": { "name": "Latte Frío" },
+        "chaiLatteCafeGlace": { "name": "Chai Latte con Café Frío" },
+        "chaiLatteGlace": { "name": "Chai Latte Frío" },
+        "chocolatGlace": { "name": "Chocolate Frío" },
+        "mochaChocolatGlace": { "name": "Mocha de Chocolate Frío" }
+      }
+    }
+  },
+  "infos": {
+    "find": {
+      "eyebrow": "Cómo Encontrarnos",
+      "title": "Dirección y Acceso",
+      "badge": "París 7.º · Torre Eiffel",
+      "cardEyebrow": "La Magie de Paris",
+      "cardTitle1": "A pasos de",
+      "cardTitle2": "la Torre Eiffel.",
+      "labels": { "address": "Dirección", "hours": "Horario", "phone": "Teléfono", "email": "Correo electrónico", "social": "Redes", "google": "Google", "viewProfile": "Ver perfil" }
+    },
+    "about": {
+      "eyebrow": "Sobre Nosotros",
+      "titlePre": "Una historia de ",
+      "titleEm": "salón",
+      "titlePost": ".",
+      "p1": "Cada mañana, el chef elige sus productos uno a uno, y luego compone cada plato como una pequeña escultura, colocada con cuidado sobre porcelana antigua.",
+      "p2": "Nada se prepara con antelación: las briochas se tuestan al momento, los pancakes se voltean justo antes de servir, el café se tuesta en pequeños lotes. Una cocina pausada, en un decorado igual de pausado.",
+      "quote": "«Un salón donde se toma el tiempo, plato tras plato.»",
+      "imageAlt": "Detalle del salón La Magie de Paris"
+    },
+    "instagram": {
+      "titlePre": "El salón ",
+      "titleEm": "en imágenes",
+      "titlePost": "",
+      "subtitle": "Síguenos para conocer las novedades, los platos del día y el ambiente.",
+      "followInstagram": "Seguir en Instagram",
+      "followTiktok": "Seguir en TikTok",
+      "postAlt": "Publicación de Instagram {{n}}"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title1": "Preguntas",
+      "title2": "frecuentes",
+      "items": [
+        { "q": "¿Aceptan reservas?", "a": "No, funcionamos sin reservas, todos los días. En caso de afluencia, le acomodamos en cuanto se libere una mesa." },
+        { "q": "¿Cuál es su horario?", "a": "Todos los días, de 9h a 17h. El servicio es continuo: puede venir a comer a cualquier hora." },
+        { "q": "¿Es accesible con carrito o silla de ruedas?", "a": "El salón está a nivel de la calle y admite carritos y sillas de ruedas. No dude en avisarnos a su llegada." },
+        { "q": "¿Ofrecen opciones vegetarianas o sin gluten?", "a": "Sí, varios platos son naturalmente vegetarianos. Para alergias e intolerancias, pida a nuestro equipo la carta de alérgenos." },
+        { "q": "¿Cómo llegar?", "a": "Metro École Militaire (línea 8), a 3 minutos a pie. Estamos a pocas calles de la Torre Eiffel, en el distrito 7." },
+        { "q": "¿Se puede privatizar el salón?", "a": "Sí, para eventos por la noche. Escríbanos a Lamagiedeparis7@gmail.com con la fecha y el número de invitados." }
+      ]
+    }
+  }
+}

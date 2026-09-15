@@ -1,0 +1,237 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "menu": "La Carte",
+    "infos": "Infos",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "backHome": "Retour à l'accueil, La Magie de Paris"
+  },
+  "ticker": ["La Magie de Paris", "Brunch fait maison", "Café de spécialité", "Sans réservation", "9h à 17h"],
+  "footer": {
+    "description": "Un salon envoûtant, où chaque plat est composé à la main, tous les jours, sans réservation.",
+    "address": "Adresse",
+    "contact": "Contact",
+    "location": "Paris · 7ᵉ arrondissement"
+  },
+  "notFound": {
+    "eyebrow": "Introuvable",
+    "title": "404",
+    "text": "Cette page n'existe plus. Retournons au salon.",
+    "cta": "Retour à l'accueil"
+  },
+  "errorPage": {
+    "eyebrow": "Une contrariété",
+    "title": "Cette page n'a pas su se présenter",
+    "text": "Rafraîchissez la page ou revenez à l'accueil.",
+    "retry": "Réessayer",
+    "home": "Accueil"
+  },
+  "common": {
+    "reviewButton": "Laisser un avis Google",
+    "reviewsSuffix": "avis Google",
+    "discover": "Découvrir",
+    "seeFullMenu": "Voir toute la carte",
+    "itinerary": "Itinéraire",
+    "signature": "Signature",
+    "hours": "Tous les jours, de 9h à 17h",
+    "metro": "École Militaire, ligne 8",
+    "stars": "{{count}} étoiles"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Depuis 2022 · Paris 7ᵉ",
+      "videoAlt": "Le salon La Magie de Paris, un intérieur ancien aux dorures et au velours grenat",
+      "subtitle": "Un salon où chaque plat se dresse comme une sculpture, entre les salons de Damas et les cafés parisiens.",
+      "ctaMenu": "Découvrir la carte",
+      "ctaFind": "Nous trouver",
+      "hours": "Tous les jours, de 9h à 17h, sans réservation"
+    },
+    "maison": {
+      "eyebrow": "La Maison",
+      "title1": "Un Brunch",
+      "title2": "Sculpté.",
+      "p1": "Ici s'entremêlent le souvenir des salons orientaux et l'esprit des cafés du 7ᵉ arrondissement. Velours grenat, dorures anciennes, marbre veiné : un décor de conte pour prendre le temps, comme autrefois.",
+      "p2": "Rien n'est laissé au hasard. Le chef compose chaque plat un par un, comme on façonnerait une sculpture, avec des produits choisis chaque matin et un café de spécialité torréfié en petits lots.",
+      "cta": "Notre histoire",
+      "noRes": "Sans réservation",
+      "imageAlt": "Détail du salon, miroir doré, marbre, chandelles"
+    },
+    "signature": {
+      "eyebrow": "Le Plat Signature",
+      "titlePre": "Trois créations, ",
+      "titleEm": "une seule table",
+      "titlePost": "."
+    },
+    "cravings": {
+      "eyebrow": "À votre goût",
+      "titlePre": "Quatre envies, ",
+      "titleEm": "une seule adresse",
+      "titlePost": ".",
+      "subtitle": "Salé, sucré, café : chaque envie a sa page dans la carte.",
+      "items": { "sale": "Salé", "sucre": "Sucré", "cafe": "Café", "fraicheurs": "Fraîcheurs" }
+    },
+    "reviews": {
+      "eyebrow": "Ils en parlent",
+      "suffix": "sur {{count}} avis",
+      "testimonials": [
+        { "name": "Camille R.", "body": "Le décor est à couper le souffle. On se croit dans un conte parisien. La brioche saumon est divine." },
+        { "name": "Sofia K.", "body": "Le meilleur cappuccino du 7ᵉ, et un accueil d'une gentillesse rare. Un incontournable." },
+        { "name": "Louis M.", "body": "Les pancakes Dubaï sont une révélation. J'y retourne dès demain matin." },
+        { "name": "Inès B.", "body": "Un salon magnifique, feutré, tout est fait maison. Coup de cœur." },
+        { "name": "Théo D.", "body": "Ambiance velours et dorures, café de spécialité impeccable. Bravo." },
+        { "name": "Nour A.", "body": "Comme un salon de Damas transporté à Paris. Merveilleux." }
+      ]
+    },
+    "find": {
+      "eyebrow": "Nous trouver",
+      "title": "Un salon au cœur du 7ᵉ",
+      "badge": "Paris 7ᵉ · Tour Eiffel",
+      "cardEyebrow": "La Magie de Paris",
+      "cardTitle1": "À deux pas de",
+      "cardTitle2": "la Tour Eiffel.",
+      "labels": { "address": "Adresse", "hours": "Horaires", "phone": "Téléphone" }
+    }
+  },
+  "carte": {
+    "header": {
+      "eyebrow": "La Carte",
+      "titlePre": "Tout est ",
+      "titleEm": "fait maison",
+      "titlePost": ".",
+      "subtitle": "Chaque plat est une petite sculpture, composée sur place avec des produits choisis chaque matin."
+    },
+    "categoriesLabel": "Catégories",
+    "filters": { "glutenFree": "Sans gluten", "vegetarian": "Végétarien", "lactoseFree": "Sans lactose" },
+    "empty": {
+      "filtered": "Aucun plat ne correspond à ces filtres dans cette catégorie. Essayez une autre catégorie ou retirez un filtre.",
+      "none": "Aucun plat dans cette catégorie pour le moment."
+    },
+    "allergens": "Allergènes : la liste des allergènes présents dans nos plats est disponible sur demande. Tous nos plats sont préparés sur place ; des traces peuvent subsister. Prix service compris.",
+    "categoryLabels": {
+      "brioches": "Brioches Toastées",
+      "pancakes-sales": "Pancakes Salés",
+      "pancakes-sucres": "Pancakes Sucrés",
+      "cookies": "Cookies & Douceurs",
+      "chaudes": "Boissons Chaudes",
+      "fraiches": "Boissons Fraîches",
+      "glacees": "Boissons Glacées"
+    },
+    "notes": {
+      "pancakes-sales": "Suppléments : purée d'avocat +3 € · crevettes ou saumon +4 € · œuf poché +1,50 €",
+      "chaudesGlacees": "Suppléments : double shot +0,50 € · lait végétal (avoine, coco, amande) +0,50 € · sirop caramel, vanille ou noisette +0,50 €"
+    },
+    "dishes": {
+      "brioches": {
+        "houmous": { "name": "Brioche Toastée au Houmous", "desc": "Purée de pois chiches, citron, curcuma, poivre sauvage, pousses d'épinards, roquette, mélasse de grenade, tomates, concombre, brioche maison chaude." },
+        "saumon": { "name": "Brioche Toastée au Saumon", "desc": "Purée d'avocat, saumon fumé, pousses d'épinards, roquette, œuf poché de plein air, sauce hollandaise, brioche maison chaude." },
+        "crevettes": { "name": "Brioche Toastée aux Crevettes", "desc": "Purée d'avocat, crevettes, ciboulette, aneth, citron, sauce blanche maison, pousses d'épinards, roquette, œuf poché de plein air, brioche maison chaude." },
+        "fromageTresse": { "name": "Brioche Toastée Fromage Tressé", "desc": "Purée d'avocat, pesto, fromage tressé, tomates cerises, tomates confites, œuf poché de plein air, pousses d'épinards, roquette, sauce hollandaise, brioche maison chaude." },
+        "poulet": { "name": "Brioche Toastée Poulet", "desc": "Purée d'avocat, filet de poulet rôti, pickles, pesto, tomates séchées, pousses d'épinards, sauce hollandaise à la truffe, brioche maison chaude." },
+        "truffe": { "name": "Brioche Toastée à la Truffe", "desc": "Purée d'avocat, champignons sautés à la truffe, pousses d'épinards, roquette, œuf poché de plein air, sauce hollandaise, brioche maison chaude." },
+        "labneh": { "name": "Brioche Toastée au Labneh", "desc": "Avocat, labneh, tomates cerises, concombre, menthe, roquette, huile d'olive, paprika, œuf poché de plein air, brioche maison chaude." }
+      },
+      "pancakes-sales": {
+        "saumon": { "name": "Pancakes Saumon", "desc": "Purée d'avocat, sirop d'érable, saumon fumé, épinards frais, œuf poché de plein air." },
+        "crevettes": { "name": "Pancakes Crevettes", "desc": "Purée d'avocat, sirop d'érable, crevettes, ciboulette, aneth, citron, sauce blanche maison, pousses d'épinards, roquette, œuf poché de plein air." },
+        "labneh": { "name": "Pancakes Labneh", "desc": "Avocat, labneh, tomates cerises, concombre, menthe, roquette, huile d'olive, paprika, œuf poché de plein air." }
+      },
+      "pancakes-sucres": {
+        "cremeNoisette": { "name": "Pancakes Crème de Noisette", "desc": "Crème de noisette maison, sirop d'érable, sauce chocolat, amandes torréfiées, chantilly à la vanille de Madagascar." },
+        "fruitsFrais": { "name": "Pancakes aux Fruits Frais", "desc": "Sirop d'érable, fruits frais de saison, amandes torréfiées, chantilly à la vanille de Madagascar." },
+        "dubai": { "name": "Pancakes Dubaï", "desc": "Crème pistache maison, sirop d'érable, sauce chocolat, pistaches torréfiées, kunafa grillée, chantilly à la vanille de Madagascar." }
+      },
+      "cookies": {
+        "pecan": { "name": "Cookie Noix de Pécan, Chocolat au Lait & Fleur de Sel" },
+        "pistache": { "name": "Cookie Pistache & Chocolat au Lait" },
+        "chocoBlancNoir": { "name": "Cookie Chocolat Noir & Blanc, Fleur de Sel" },
+        "croissant": { "name": "Croissant" }
+      },
+      "chaudes": {
+        "espresso": { "name": "Espresso / Café Allongé" },
+        "doubleEspresso": { "name": "Double Espresso" },
+        "americano": { "name": "Americano", "desc": "Double dose." },
+        "macchiato": { "name": "Macchiato" },
+        "flatWhite": { "name": "Flat White", "desc": "Double espresso." },
+        "latte": { "name": "Latte" },
+        "cappuccino": { "name": "Cappuccino" },
+        "chaiLatteCafe": { "name": "Chaï Latte Café" },
+        "chaiLatte": { "name": "Chaï Latte" },
+        "matchaLatte": { "name": "Matcha Latte" },
+        "matchaLatteSesame": { "name": "Matcha Latte au Sésame Noir" },
+        "matchaLatteCollagene": { "name": "Matcha Latte au Collagène & Sésame Noir" },
+        "mochaChocolat": { "name": "Café Mocha au Chocolat", "desc": "Fait maison." },
+        "chocolatViennois": { "name": "Chocolat Chaud Viennois", "desc": "Fait maison." },
+        "chocolatChaud": { "name": "Chocolat Chaud", "desc": "Fait maison." },
+        "theInfusions": { "name": "Thé & Infusions", "desc": "Demandez à votre barista. Au choix : thé vert sencha, thé vert à la menthe, thé noir breakfast, thé noir earl grey, infusion rooibos vahiné." }
+      },
+      "fraiches": {
+        "virginMojito": { "name": "Virgin Mojito" },
+        "virginMojitoFraise": { "name": "Virgin Mojito Fraise" },
+        "jusOrangeHibiscus": { "name": "Jus d'Orange Hibiscus", "desc": "Orange, hibiscus et fleur d'oranger." },
+        "jusGrenadeBio": { "name": "Jus de Grenade Bio", "desc": "Sans sucres ajoutés." },
+        "jusOrangePresse": { "name": "Jus d'Orange Pressé" },
+        "eauMinerale": { "name": "Eau Minérale" },
+        "eauGazeuse": { "name": "Eau Gazeuse (Perrier)" },
+        "cocaCola": { "name": "Coca-Cola" }
+      },
+      "glacees": {
+        "matchaLatteGlace": { "name": "Matcha Latte Glacé" },
+        "matchaLatteGlaceFraise": { "name": "Matcha Latte Glacé Fraise", "desc": "Le latte signature de la maison." },
+        "matchaLatteGlaceSesame": { "name": "Matcha Latte Glacé au Sésame Noir" },
+        "matchaLatteGlaceCollagene": { "name": "Matcha Latte Glacé au Collagène & Sésame Noir" },
+        "theGlacePeche": { "name": "Thé Glacé Pêche" },
+        "americanoGlace": { "name": "Américano Glacé" },
+        "flatWhiteGlace": { "name": "Flat White Glacé" },
+        "latteGlace": { "name": "Latte Glacé" },
+        "chaiLatteCafeGlace": { "name": "Chaï Latte Café Glacé" },
+        "chaiLatteGlace": { "name": "Chaï Latte Glacé" },
+        "chocolatGlace": { "name": "Chocolat Glacé" },
+        "mochaChocolatGlace": { "name": "Mocha Chocolat Glacé" }
+      }
+    }
+  },
+  "infos": {
+    "find": {
+      "eyebrow": "Nous trouver",
+      "title": "Adresse & accès",
+      "badge": "Paris 7ᵉ · Tour Eiffel",
+      "cardEyebrow": "La Magie de Paris",
+      "cardTitle1": "À deux pas de",
+      "cardTitle2": "la Tour Eiffel.",
+      "labels": { "address": "Adresse", "hours": "Horaires", "phone": "Téléphone", "email": "Email", "social": "Réseaux", "google": "Google", "viewProfile": "Voir la fiche" }
+    },
+    "about": {
+      "eyebrow": "À propos",
+      "titlePre": "Une histoire de ",
+      "titleEm": "salon",
+      "titlePost": ".",
+      "p1": "Chaque matin, le chef choisit ses produits un par un, puis compose chaque plat comme une petite sculpture, posée avec soin sur une porcelaine ancienne.",
+      "p2": "Rien n'est préparé à l'avance : les brioches sont toastées à la commande, les pancakes tournés au moment de servir, le café torréfié en petits lots. Une cuisine lente, dans un décor qui ne l'est pas moins.",
+      "quote": "« Un salon où l'on prend le temps, plat après plat. »",
+      "imageAlt": "Détail du salon La Magie de Paris"
+    },
+    "instagram": {
+      "titlePre": "Le salon ",
+      "titleEm": "en images",
+      "titlePost": "",
+      "subtitle": "Suivez-nous pour les nouveautés, les plats du jour et l'ambiance.",
+      "followInstagram": "Suivre sur Instagram",
+      "followTiktok": "Suivre sur TikTok",
+      "postAlt": "Publication Instagram {{n}}"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title1": "Questions",
+      "title2": "fréquentes",
+      "items": [
+        { "q": "Prenez-vous des réservations ?", "a": "Non, nous fonctionnons sans réservation, tous les jours. En cas d'affluence, nous vous installons dès qu'une table se libère." },
+        { "q": "Quels sont vos horaires ?", "a": "Tous les jours, de 9h à 17h. Le service est continu : vous pouvez venir déjeuner à toute heure." },
+        { "q": "Est-ce accessible en poussette ou en fauteuil roulant ?", "a": "Le salon est de plain-pied et accueille poussettes et fauteuils. N'hésitez pas à nous prévenir à votre arrivée." },
+        { "q": "Proposez-vous des options végétariennes / sans gluten ?", "a": "Oui, plusieurs plats sont naturellement végétariens. Pour les allergies et intolérances, demandez notre carte des allergènes à l'équipe." },
+        { "q": "Comment venir ?", "a": "Métro École Militaire (ligne 8), à 3 minutes à pied. Nous sommes à quelques rues de la Tour Eiffel, dans le 7ᵉ." },
+        { "q": "Peut-on privatiser le salon ?", "a": "Oui, pour des événements en soirée. Écrivez-nous à Lamagiedeparis7@gmail.com avec la date et le nombre d'invités." }
+      ]
+    }
+  }
+}

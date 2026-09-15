@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 import logo from "@/assets/logo.jpg";
+import { SUPPORTED_LANGUAGES, setLanguage, type Lang } from "@/i18n";
 
 export const BUSINESS = {
   name: "La Magie de Paris",
@@ -86,15 +88,10 @@ export function Arch({
 
 /* ---------- Ticker ---------- */
 export function Ticker() {
-  const items = [
-    "La Magie de Paris",
-    "Brunch fait maison",
-    "Café de spécialité",
-    "Sans réservation",
-    "9h à 17h",
-  ];
-  const row = items.flatMap((t, i) => [
-    <span key={`t-${i}`}>{t}</span>,
+  const { t } = useTranslation();
+  const items = t("ticker", { returnObjects: true }) as string[];
+  const row = items.flatMap((item, i) => [
+    <span key={`t-${i}`}>{item}</span>,
     <span key={`s-${i}`} aria-hidden className="text-[color:var(--gold)]/70">✦</span>,
   ]);
   return (
@@ -107,8 +104,38 @@ export function Ticker() {
   );
 }
 
+/* ---------- Language switcher ---------- */
+const LANGUAGE_LABELS: Record<Lang, string> = { fr: "FR", en: "EN", es: "ES" };
+
+export function LanguageSwitcher({ className = "" }: { className?: string }) {
+  const { i18n } = useTranslation();
+  const current = i18n.language as Lang;
+  return (
+    <div className={`flex items-center gap-1 font-[family-name:var(--font-label)] text-[0.68rem] tracking-[0.15em] ${className}`}>
+      {SUPPORTED_LANGUAGES.map((lang, i) => (
+        <span key={lang} className="flex items-center gap-1">
+          {i > 0 ? <span className="text-[color:var(--cream)]/30" aria-hidden>·</span> : null}
+          <button
+            type="button"
+            onClick={() => setLanguage(lang)}
+            aria-current={current === lang}
+            className={
+              current === lang
+                ? "text-[color:var(--gold)]"
+                : "text-[color:var(--cream)]/60 hover:text-[color:var(--gold-light)] transition-colors"
+            }
+          >
+            {LANGUAGE_LABELS[lang]}
+          </button>
+        </span>
+      ))}
+    </div>
+  );
+}
+
 /* ---------- Nav ---------- */
 export function Nav() {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -129,21 +156,22 @@ export function Nav() {
         aria-label="Navigation principale"
         className="mx-auto max-w-7xl px-5 sm:px-8 py-4 flex items-center justify-between gap-6"
       >
-        <Link to="/" className="flex items-center gap-3 group" aria-label="Retour à l'accueil, La Magie de Paris">
+        <Link to="/" className="flex items-center gap-3 group" aria-label={t("nav.backHome")}>
           <LogoMark className="h-9" />
           <span className="display italic text-xl sm:text-2xl text-[color:var(--cream)] leading-none">
             La Magie <span className="text-[color:var(--gold)]">de Paris</span>
           </span>
         </Link>
         <div className="hidden md:flex items-center gap-8">
-          <Link to="/" className={linkCls}>Accueil</Link>
-          <Link to="/carte" className={linkCls}>La Carte</Link>
-          <Link to="/infos" className={linkCls}>Infos</Link>
+          <Link to="/" className={linkCls}>{t("nav.home")}</Link>
+          <Link to="/carte" className={linkCls}>{t("nav.menu")}</Link>
+          <Link to="/infos" className={linkCls}>{t("nav.infos")}</Link>
+          <LanguageSwitcher />
         </div>
         <button
           type="button"
           className="md:hidden text-[color:var(--gold)] p-2 -mr-2"
-          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
         >
@@ -163,9 +191,10 @@ export function Nav() {
       {open ? (
         <div className="md:hidden hairline-b bg-[color:var(--garnet-deep)]">
           <div className="mx-auto max-w-7xl px-5 py-5 flex flex-col gap-5">
-            <Link to="/" className={linkCls} onClick={() => setOpen(false)}>Accueil</Link>
-            <Link to="/carte" className={linkCls} onClick={() => setOpen(false)}>La Carte</Link>
-            <Link to="/infos" className={linkCls} onClick={() => setOpen(false)}>Infos</Link>
+            <Link to="/" className={linkCls} onClick={() => setOpen(false)}>{t("nav.home")}</Link>
+            <Link to="/carte" className={linkCls} onClick={() => setOpen(false)}>{t("nav.menu")}</Link>
+            <Link to="/infos" className={linkCls} onClick={() => setOpen(false)}>{t("nav.infos")}</Link>
+            <LanguageSwitcher className="mt-1" />
           </div>
         </div>
       ) : null}
@@ -175,6 +204,7 @@ export function Nav() {
 
 /* ---------- Footer ---------- */
 export function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="bg-[color:var(--garnet-deep)] hairline-b border-t text-[color:var(--cream)]/80 mt-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-16 grid gap-12 md:grid-cols-4">
@@ -186,18 +216,18 @@ export function Footer() {
             </span>
           </div>
           <p className="mt-5 max-w-sm text-[color:var(--cream)]/70 font-[family-name:var(--font-body)]">
-            Un salon envoûtant, où chaque plat est composé à la main, tous les jours, sans réservation.
+            {t("footer.description")}
           </p>
           <Ornament className="mt-6 justify-start" />
         </div>
         <div>
-          <div className="eyebrow">Adresse</div>
+          <div className="eyebrow">{t("footer.address")}</div>
           <p className="mt-4">{BUSINESS.address}</p>
-          <p className="mt-1 text-[color:var(--cream)]/60">{BUSINESS.metro}</p>
-          <p className="mt-3">{BUSINESS.hours}</p>
+          <p className="mt-1 text-[color:var(--cream)]/60">{t("common.metro")}</p>
+          <p className="mt-3">{t("common.hours")}</p>
         </div>
         <div>
-          <div className="eyebrow">Contact</div>
+          <div className="eyebrow">{t("footer.contact")}</div>
           <p className="mt-4">
             <a href={BUSINESS.phoneHref} className="hover:text-[color:var(--gold-light)]">
               {BUSINESS.phone}
@@ -220,7 +250,7 @@ export function Footer() {
       </div>
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-6 hairline flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[color:var(--cream)]/50 font-[family-name:var(--font-label)] uppercase tracking-[0.25em]">
         <span>© {new Date().getFullYear()} La Magie de Paris</span>
-        <span>Paris · 7ᵉ arrondissement</span>
+        <span>{t("footer.location")}</span>
       </div>
     </footer>
   );
@@ -268,8 +298,9 @@ export function useReveal() {
 
 /* ---------- Star rating ---------- */
 export function Stars({ value = 5 }: { value?: number }) {
+  const { t } = useTranslation();
   return (
-    <span aria-label={`${value} étoiles`} className="text-[color:var(--gold)] tracking-[0.15em]">
+    <span aria-label={t("common.stars", { count: value })} className="text-[color:var(--gold)] tracking-[0.15em]">
       {"★".repeat(value)}
     </span>
   );

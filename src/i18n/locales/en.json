@@ -1,0 +1,237 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "infos": "Info",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "backHome": "Back to home, La Magie de Paris"
+  },
+  "ticker": ["La Magie de Paris", "Homemade brunch", "Specialty coffee", "No reservation", "9am to 5pm"],
+  "footer": {
+    "description": "An enchanting salon, where every dish is composed by hand, every day, no reservation needed.",
+    "address": "Address",
+    "contact": "Contact",
+    "location": "Paris · 7th arrondissement"
+  },
+  "notFound": {
+    "eyebrow": "Not Found",
+    "title": "404",
+    "text": "This page no longer exists. Let's head back to the salon.",
+    "cta": "Back to home"
+  },
+  "errorPage": {
+    "eyebrow": "A Small Hiccup",
+    "title": "This page couldn't quite present itself",
+    "text": "Refresh the page or return home.",
+    "retry": "Try again",
+    "home": "Home"
+  },
+  "common": {
+    "reviewButton": "Leave a Google review",
+    "reviewsSuffix": "Google reviews",
+    "discover": "Discover",
+    "seeFullMenu": "See the full menu",
+    "itinerary": "Directions",
+    "signature": "Signature",
+    "hours": "Every day, 9am to 5pm",
+    "metro": "École Militaire, line 8",
+    "stars": "{{count}} stars"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Since 2022 · Paris 7th",
+      "videoAlt": "The La Magie de Paris salon, an antique interior of gilding and garnet velvet",
+      "subtitle": "A salon where every dish stands like a sculpture, between the salons of Damascus and the cafés of Paris.",
+      "ctaMenu": "Discover the menu",
+      "ctaFind": "Find us",
+      "hours": "Every day, 9am to 5pm, no reservation"
+    },
+    "maison": {
+      "eyebrow": "The House",
+      "title1": "A Sculpted",
+      "title2": "Brunch.",
+      "p1": "Here, the memory of oriental salons intertwines with the spirit of the 7th arrondissement's cafés. Garnet velvet, antique gilding, veined marble: a storybook setting to take your time, like in days gone by.",
+      "p2": "Nothing is left to chance. The chef composes each dish one by one, as if shaping a sculpture, with produce chosen each morning and specialty coffee roasted in small batches.",
+      "cta": "Our story",
+      "noRes": "No reservation needed",
+      "imageAlt": "Detail of the salon, gilded mirror, marble, candles"
+    },
+    "signature": {
+      "eyebrow": "The Signature Dish",
+      "titlePre": "Three creations, ",
+      "titleEm": "one table",
+      "titlePost": "."
+    },
+    "cravings": {
+      "eyebrow": "To Your Taste",
+      "titlePre": "Four cravings, ",
+      "titleEm": "one address",
+      "titlePost": ".",
+      "subtitle": "Savory, sweet, coffee: every craving has its page in the menu.",
+      "items": { "sale": "Savory", "sucre": "Sweet", "cafe": "Coffee", "fraicheurs": "Cool Drinks" }
+    },
+    "reviews": {
+      "eyebrow": "What They're Saying",
+      "suffix": "from {{count}} reviews",
+      "testimonials": [
+        { "name": "Camille R.", "body": "The décor is breathtaking. It feels like a Parisian fairy tale. The salmon brioche is divine." },
+        { "name": "Sofia K.", "body": "The best cappuccino in the 7th, and a rare kind of warm welcome. A must-visit." },
+        { "name": "Louis M.", "body": "The Dubai pancakes are a revelation. I'm going back again tomorrow morning." },
+        { "name": "Inès B.", "body": "A beautiful, cozy salon, everything homemade. Absolutely loved it." },
+        { "name": "Théo D.", "body": "Velvet and gilded ambiance, impeccable specialty coffee. Bravo." },
+        { "name": "Nour A.", "body": "Like a Damascus salon transported to Paris. Wonderful." }
+      ]
+    },
+    "find": {
+      "eyebrow": "Find Us",
+      "title": "A salon in the heart of the 7th",
+      "badge": "Paris 7th · Eiffel Tower",
+      "cardEyebrow": "La Magie de Paris",
+      "cardTitle1": "Just steps from",
+      "cardTitle2": "the Eiffel Tower.",
+      "labels": { "address": "Address", "hours": "Hours", "phone": "Phone" }
+    }
+  },
+  "carte": {
+    "header": {
+      "eyebrow": "The Menu",
+      "titlePre": "Everything is ",
+      "titleEm": "homemade",
+      "titlePost": ".",
+      "subtitle": "Each dish is a small sculpture, composed on-site with produce chosen every morning."
+    },
+    "categoriesLabel": "Categories",
+    "filters": { "glutenFree": "Gluten-free", "vegetarian": "Vegetarian", "lactoseFree": "Lactose-free" },
+    "empty": {
+      "filtered": "No dish matches these filters in this category. Try another category or remove a filter.",
+      "none": "No dishes in this category at the moment."
+    },
+    "allergens": "Allergens: the list of allergens present in our dishes is available on request. All our dishes are prepared on-site; traces may remain. Prices include service.",
+    "categoryLabels": {
+      "brioches": "Toasted Brioches",
+      "pancakes-sales": "Savory Pancakes",
+      "pancakes-sucres": "Sweet Pancakes",
+      "cookies": "Cookies & Treats",
+      "chaudes": "Hot Drinks",
+      "fraiches": "Cold Drinks",
+      "glacees": "Iced Drinks"
+    },
+    "notes": {
+      "pancakes-sales": "Supplements: avocado purée +€3 · prawns or salmon +€4 · poached egg +€1.50",
+      "chaudesGlacees": "Supplements: double shot +€0.50 · plant-based milk (oat, coconut, almond) +€0.50 · caramel, vanilla or hazelnut syrup +€0.50"
+    },
+    "dishes": {
+      "brioches": {
+        "houmous": { "name": "Toasted Brioche with Hummus", "desc": "Chickpea purée, lemon, turmeric, wild pepper, baby spinach, arugula, pomegranate molasses, tomatoes, cucumber, warm homemade brioche." },
+        "saumon": { "name": "Toasted Brioche with Salmon", "desc": "Avocado purée, smoked salmon, baby spinach, arugula, free-range poached egg, hollandaise sauce, warm homemade brioche." },
+        "crevettes": { "name": "Toasted Brioche with Prawns", "desc": "Avocado purée, prawns, chives, dill, lemon, homemade white sauce, baby spinach, arugula, free-range poached egg, warm homemade brioche." },
+        "fromageTresse": { "name": "Toasted Brioche with Braided Cheese", "desc": "Avocado purée, pesto, braided cheese, cherry tomatoes, confit tomatoes, free-range poached egg, baby spinach, arugula, hollandaise sauce, warm homemade brioche." },
+        "poulet": { "name": "Toasted Brioche with Chicken", "desc": "Avocado purée, roasted chicken fillet, pickles, pesto, sun-dried tomatoes, baby spinach, truffle hollandaise sauce, warm homemade brioche." },
+        "truffe": { "name": "Toasted Brioche with Truffle", "desc": "Avocado purée, truffle sautéed mushrooms, baby spinach, arugula, free-range poached egg, hollandaise sauce, warm homemade brioche." },
+        "labneh": { "name": "Toasted Brioche with Labneh", "desc": "Avocado, labneh, cherry tomatoes, cucumber, mint, arugula, olive oil, paprika, free-range poached egg, warm homemade brioche." }
+      },
+      "pancakes-sales": {
+        "saumon": { "name": "Salmon Pancakes", "desc": "Avocado purée, maple syrup, smoked salmon, fresh spinach, free-range poached egg." },
+        "crevettes": { "name": "Prawn Pancakes", "desc": "Avocado purée, maple syrup, prawns, chives, dill, lemon, homemade white sauce, baby spinach, arugula, free-range poached egg." },
+        "labneh": { "name": "Labneh Pancakes", "desc": "Avocado, labneh, cherry tomatoes, cucumber, mint, arugula, olive oil, paprika, free-range poached egg." }
+      },
+      "pancakes-sucres": {
+        "cremeNoisette": { "name": "Hazelnut Cream Pancakes", "desc": "Homemade hazelnut cream, maple syrup, chocolate sauce, toasted almonds, Madagascar vanilla whipped cream." },
+        "fruitsFrais": { "name": "Fresh Fruit Pancakes", "desc": "Maple syrup, fresh seasonal fruit, toasted almonds, Madagascar vanilla whipped cream." },
+        "dubai": { "name": "Dubai Pancakes", "desc": "Homemade pistachio cream, maple syrup, chocolate sauce, toasted pistachios, toasted kunafa, Madagascar vanilla whipped cream." }
+      },
+      "cookies": {
+        "pecan": { "name": "Pecan, Milk Chocolate & Sea Salt Cookie" },
+        "pistache": { "name": "Pistachio & Milk Chocolate Cookie" },
+        "chocoBlancNoir": { "name": "Dark & White Chocolate Cookie, Sea Salt" },
+        "croissant": { "name": "Croissant" }
+      },
+      "chaudes": {
+        "espresso": { "name": "Espresso / Lungo" },
+        "doubleEspresso": { "name": "Double Espresso" },
+        "americano": { "name": "Americano", "desc": "Double shot." },
+        "macchiato": { "name": "Macchiato" },
+        "flatWhite": { "name": "Flat White", "desc": "Double espresso." },
+        "latte": { "name": "Latte" },
+        "cappuccino": { "name": "Cappuccino" },
+        "chaiLatteCafe": { "name": "Chai Latte with Coffee" },
+        "chaiLatte": { "name": "Chai Latte" },
+        "matchaLatte": { "name": "Matcha Latte" },
+        "matchaLatteSesame": { "name": "Black Sesame Matcha Latte" },
+        "matchaLatteCollagene": { "name": "Collagen & Black Sesame Matcha Latte" },
+        "mochaChocolat": { "name": "Chocolate Mocha", "desc": "Homemade." },
+        "chocolatViennois": { "name": "Viennese Hot Chocolate", "desc": "Homemade." },
+        "chocolatChaud": { "name": "Hot Chocolate", "desc": "Homemade." },
+        "theInfusions": { "name": "Tea & Infusions", "desc": "Ask your barista. Choose from: sencha green tea, mint green tea, breakfast black tea, earl grey black tea, rooibos vahiné infusion." }
+      },
+      "fraiches": {
+        "virginMojito": { "name": "Virgin Mojito" },
+        "virginMojitoFraise": { "name": "Strawberry Virgin Mojito" },
+        "jusOrangeHibiscus": { "name": "Hibiscus Orange Juice", "desc": "Orange, hibiscus and orange blossom." },
+        "jusGrenadeBio": { "name": "Organic Pomegranate Juice", "desc": "No added sugar." },
+        "jusOrangePresse": { "name": "Fresh Squeezed Orange Juice" },
+        "eauMinerale": { "name": "Still Water" },
+        "eauGazeuse": { "name": "Sparkling Water (Perrier)" },
+        "cocaCola": { "name": "Coca-Cola" }
+      },
+      "glacees": {
+        "matchaLatteGlace": { "name": "Iced Matcha Latte" },
+        "matchaLatteGlaceFraise": { "name": "Iced Strawberry Matcha Latte", "desc": "The house's signature latte." },
+        "matchaLatteGlaceSesame": { "name": "Iced Black Sesame Matcha Latte" },
+        "matchaLatteGlaceCollagene": { "name": "Iced Collagen & Black Sesame Matcha Latte" },
+        "theGlacePeche": { "name": "Iced Peach Tea" },
+        "americanoGlace": { "name": "Iced Americano" },
+        "flatWhiteGlace": { "name": "Iced Flat White" },
+        "latteGlace": { "name": "Iced Latte" },
+        "chaiLatteCafeGlace": { "name": "Iced Chai Latte with Coffee" },
+        "chaiLatteGlace": { "name": "Iced Chai Latte" },
+        "chocolatGlace": { "name": "Iced Chocolate" },
+        "mochaChocolatGlace": { "name": "Iced Chocolate Mocha" }
+      }
+    }
+  },
+  "infos": {
+    "find": {
+      "eyebrow": "Find Us",
+      "title": "Address & Access",
+      "badge": "Paris 7th · Eiffel Tower",
+      "cardEyebrow": "La Magie de Paris",
+      "cardTitle1": "Just steps from",
+      "cardTitle2": "the Eiffel Tower.",
+      "labels": { "address": "Address", "hours": "Hours", "phone": "Phone", "email": "Email", "social": "Social", "google": "Google", "viewProfile": "View profile" }
+    },
+    "about": {
+      "eyebrow": "About",
+      "titlePre": "A ",
+      "titleEm": "Salon",
+      "titlePost": " Story.",
+      "p1": "Each morning, the chef selects the produce one by one, then composes every dish like a small sculpture, carefully set on antique porcelain.",
+      "p2": "Nothing is prepared in advance: the brioches are toasted to order, the pancakes flipped just before serving, the coffee roasted in small batches. Slow cooking, in a setting that takes its time just as much.",
+      "quote": "\"A salon where you take your time, dish after dish.\"",
+      "imageAlt": "Detail of the La Magie de Paris salon"
+    },
+    "instagram": {
+      "titlePre": "The salon ",
+      "titleEm": "in pictures",
+      "titlePost": "",
+      "subtitle": "Follow us for new arrivals, daily specials and the atmosphere.",
+      "followInstagram": "Follow on Instagram",
+      "followTiktok": "Follow on TikTok",
+      "postAlt": "Instagram post {{n}}"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title1": "Frequently Asked",
+      "title2": "Questions",
+      "items": [
+        { "q": "Do you take reservations?", "a": "No, we operate without reservations, every day. If it's busy, we'll seat you as soon as a table is free." },
+        { "q": "What are your hours?", "a": "Every day, 9am to 5pm. Service runs continuously: you can come for lunch at any time." },
+        { "q": "Is it accessible with a stroller or wheelchair?", "a": "The salon is step-free and welcomes strollers and wheelchairs. Feel free to let us know when you arrive." },
+        { "q": "Do you offer vegetarian / gluten-free options?", "a": "Yes, several dishes are naturally vegetarian. For allergies and intolerances, ask our team for our allergen list." },
+        { "q": "How do I get there?", "a": "École Militaire metro station (line 8), a 3-minute walk away. We're just a few streets from the Eiffel Tower, in the 7th arrondissement." },
+        { "q": "Can the salon be privatized?", "a": "Yes, for evening events. Write to us at Lamagiedeparis7@gmail.com with the date and number of guests." }
+      ]
+    }
+  }
+}
