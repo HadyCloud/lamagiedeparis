@@ -67,6 +67,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#37070F" },
+      { name: "google", content: "notranslate" },
       { title: "La Magie de Paris, brunch et café de spécialité, Paris 7ᵉ" },
       { name: "description", content: "Un salon de brunch entre Damas et Paris, chaque plat composé comme une sculpture. Ouvert tous les jours de 9h à 17h, sans réservation. 15 rue Dupont des Loges, Paris 7ᵉ." },
       { name: "author", content: "La Magie de Paris" },
@@ -125,7 +126,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="fr">
+    <html lang="fr" translate="no" className="notranslate">
       <head>
         <HeadContent />
       </head>

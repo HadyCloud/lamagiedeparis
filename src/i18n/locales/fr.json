@@ -148,22 +148,22 @@
         "croissant": { "name": "Croissant" }
       },
       "chaudes": {
-        "espresso": { "name": "Espresso / Café Allongé" },
+        "espresso": { "name": "Espresso / Allongé" },
         "doubleEspresso": { "name": "Double Espresso" },
-        "americano": { "name": "Americano", "desc": "Double dose." },
+        "americano": { "name": "Americano", "desc": "Double espresso." },
         "macchiato": { "name": "Macchiato" },
         "flatWhite": { "name": "Flat White", "desc": "Double espresso." },
-        "latte": { "name": "Latte" },
+        "latte": { "name": "Café Latte" },
         "cappuccino": { "name": "Cappuccino" },
-        "chaiLatteCafe": { "name": "Chaï Latte Café" },
+        "chaiLatteCafe": { "name": "Café Chaï Latte" },
         "chaiLatte": { "name": "Chaï Latte" },
-        "matchaLatte": { "name": "Matcha Latte" },
+        "matchaLatte": { "name": "Matcha Latte (impérial)" },
         "matchaLatteSesame": { "name": "Matcha Latte au Sésame Noir" },
         "matchaLatteCollagene": { "name": "Matcha Latte au Collagène & Sésame Noir" },
-        "mochaChocolat": { "name": "Café Mocha au Chocolat", "desc": "Fait maison." },
-        "chocolatViennois": { "name": "Chocolat Chaud Viennois", "desc": "Fait maison." },
-        "chocolatChaud": { "name": "Chocolat Chaud", "desc": "Fait maison." },
-        "theInfusions": { "name": "Thé & Infusions", "desc": "Demandez à votre barista. Au choix : thé vert sencha, thé vert à la menthe, thé noir breakfast, thé noir earl grey, infusion rooibos vahiné." }
+        "mochaChocolat": { "name": "Café Mocha au Chocolat Maison" },
+        "chocolatViennois": { "name": "Chocolat Viennois Maison" },
+        "chocolatChaud": { "name": "Chocolat Chaud Maison" },
+        "theInfusions": { "name": "Thés & Infusions", "desc": "Demandez à votre barista. Au choix : thé vert sencha, thé vert à la menthe, thé noir breakfast, thé noir earl grey, infusion rooibos vanillé." }
       },
       "fraiches": {
         "virginMojito": { "name": "Virgin Mojito" },
@@ -171,23 +171,23 @@
         "jusOrangeHibiscus": { "name": "Jus d'Orange Hibiscus", "desc": "Orange, hibiscus et fleur d'oranger." },
         "jusGrenadeBio": { "name": "Jus de Grenade Bio", "desc": "Sans sucres ajoutés." },
         "jusOrangePresse": { "name": "Jus d'Orange Pressé" },
-        "eauMinerale": { "name": "Eau Minérale" },
+        "eauMinerale": { "name": "Eau Evian" },
         "eauGazeuse": { "name": "Eau Gazeuse (Perrier)" },
         "cocaCola": { "name": "Coca-Cola" }
       },
       "glacees": {
-        "matchaLatteGlace": { "name": "Matcha Latte Glacé" },
-        "matchaLatteGlaceFraise": { "name": "Matcha Latte Glacé Fraise", "desc": "Le latte signature de la maison." },
-        "matchaLatteGlaceSesame": { "name": "Matcha Latte Glacé au Sésame Noir" },
-        "matchaLatteGlaceCollagene": { "name": "Matcha Latte Glacé au Collagène & Sésame Noir" },
+        "matchaLatteGlace": { "name": "Matcha Latte Glacé (impérial)" },
+        "matchaLatteGlaceFraise": { "name": "Matcha Latte Fraise Glacé", "desc": "Le latte signature de la maison." },
+        "matchaLatteGlaceSesame": { "name": "Matcha Latte au Sésame Noir Glacé" },
+        "matchaLatteGlaceCollagene": { "name": "Matcha Latte au Collagène & Sésame Noir Glacé" },
         "theGlacePeche": { "name": "Thé Glacé Pêche" },
-        "americanoGlace": { "name": "Américano Glacé" },
+        "americanoGlace": { "name": "Café Americano Glacé" },
         "flatWhiteGlace": { "name": "Flat White Glacé" },
-        "latteGlace": { "name": "Latte Glacé" },
-        "chaiLatteCafeGlace": { "name": "Chaï Latte Café Glacé" },
+        "latteGlace": { "name": "Café Latte Glacé" },
+        "chaiLatteCafeGlace": { "name": "Café Chaï Latte Glacé" },
         "chaiLatteGlace": { "name": "Chaï Latte Glacé" },
         "chocolatGlace": { "name": "Chocolat Glacé" },
-        "mochaChocolatGlace": { "name": "Mocha Chocolat Glacé" }
+        "mochaChocolatGlace": { "name": "Mocha Chocolat Maison Glacé" }
       }
     }
   },

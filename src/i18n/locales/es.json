@@ -150,20 +150,20 @@
       "chaudes": {
         "espresso": { "name": "Espresso / Café Largo" },
         "doubleEspresso": { "name": "Doble Espresso" },
-        "americano": { "name": "Americano", "desc": "Doble dosis." },
+        "americano": { "name": "Americano", "desc": "Doble espresso." },
         "macchiato": { "name": "Macchiato" },
         "flatWhite": { "name": "Flat White", "desc": "Doble espresso." },
         "latte": { "name": "Latte" },
         "cappuccino": { "name": "Cappuccino" },
         "chaiLatteCafe": { "name": "Chai Latte con Café" },
         "chaiLatte": { "name": "Chai Latte" },
-        "matchaLatte": { "name": "Matcha Latte" },
+        "matchaLatte": { "name": "Matcha Latte (Imperial)" },
         "matchaLatteSesame": { "name": "Matcha Latte con Sésamo Negro" },
         "matchaLatteCollagene": { "name": "Matcha Latte con Colágeno y Sésamo Negro" },
-        "mochaChocolat": { "name": "Café Mocha con Chocolate", "desc": "Casero." },
-        "chocolatViennois": { "name": "Chocolate Caliente Vienés", "desc": "Casero." },
-        "chocolatChaud": { "name": "Chocolate Caliente", "desc": "Casero." },
-        "theInfusions": { "name": "Té e Infusiones", "desc": "Pregunta a tu barista. A elegir: té verde sencha, té verde a la menta, té negro breakfast, té negro earl grey, infusión de rooibos vahiné." }
+        "mochaChocolat": { "name": "Café Mocha con Chocolate Casero" },
+        "chocolatViennois": { "name": "Chocolate Caliente Vienés Casero" },
+        "chocolatChaud": { "name": "Chocolate Caliente Casero" },
+        "theInfusions": { "name": "Tés e Infusiones", "desc": "Pregunta a tu barista. A elegir: té verde sencha, té verde a la menta, té negro breakfast, té negro earl grey, infusión de rooibos con vainilla." }
       },
       "fraiches": {
         "virginMojito": { "name": "Virgin Mojito" },
@@ -171,12 +171,12 @@
         "jusOrangeHibiscus": { "name": "Zumo de Naranja e Hibisco", "desc": "Naranja, hibisco y flor de azahar." },
         "jusGrenadeBio": { "name": "Zumo de Granada Ecológico", "desc": "Sin azúcares añadidos." },
         "jusOrangePresse": { "name": "Zumo de Naranja Natural" },
-        "eauMinerale": { "name": "Agua Mineral" },
+        "eauMinerale": { "name": "Agua Evian" },
         "eauGazeuse": { "name": "Agua con Gas (Perrier)" },
         "cocaCola": { "name": "Coca-Cola" }
       },
       "glacees": {
-        "matchaLatteGlace": { "name": "Matcha Latte Frío" },
+        "matchaLatteGlace": { "name": "Matcha Latte Frío (Imperial)" },
         "matchaLatteGlaceFraise": { "name": "Matcha Latte Frío de Fresa", "desc": "El latte insignia de la casa." },
         "matchaLatteGlaceSesame": { "name": "Matcha Latte Frío con Sésamo Negro" },
         "matchaLatteGlaceCollagene": { "name": "Matcha Latte Frío con Colágeno y Sésamo Negro" },
@@ -187,7 +187,7 @@
         "chaiLatteCafeGlace": { "name": "Chai Latte con Café Frío" },
         "chaiLatteGlace": { "name": "Chai Latte Frío" },
         "chocolatGlace": { "name": "Chocolate Frío" },
-        "mochaChocolatGlace": { "name": "Mocha de Chocolate Frío" }
+        "mochaChocolatGlace": { "name": "Mocha de Chocolate Casero Frío" }
       }
     }
   },

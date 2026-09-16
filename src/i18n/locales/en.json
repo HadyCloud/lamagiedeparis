@@ -118,76 +118,76 @@
       "glacees": "Iced Drinks"
     },
     "notes": {
-      "pancakes-sales": "Supplements: avocado purée +€3 · prawns or salmon +€4 · poached egg +€1.50",
+      "pancakes-sales": "Supplements: avocado purée +€3 · shrimp or salmon +€4 · poached egg +€1.50",
       "chaudesGlacees": "Supplements: double shot +€0.50 · plant-based milk (oat, coconut, almond) +€0.50 · caramel, vanilla or hazelnut syrup +€0.50"
     },
     "dishes": {
       "brioches": {
-        "houmous": { "name": "Toasted Brioche with Hummus", "desc": "Chickpea purée, lemon, turmeric, wild pepper, baby spinach, arugula, pomegranate molasses, tomatoes, cucumber, warm homemade brioche." },
-        "saumon": { "name": "Toasted Brioche with Salmon", "desc": "Avocado purée, smoked salmon, baby spinach, arugula, free-range poached egg, hollandaise sauce, warm homemade brioche." },
-        "crevettes": { "name": "Toasted Brioche with Prawns", "desc": "Avocado purée, prawns, chives, dill, lemon, homemade white sauce, baby spinach, arugula, free-range poached egg, warm homemade brioche." },
-        "fromageTresse": { "name": "Toasted Brioche with Braided Cheese", "desc": "Avocado purée, pesto, braided cheese, cherry tomatoes, confit tomatoes, free-range poached egg, baby spinach, arugula, hollandaise sauce, warm homemade brioche." },
-        "poulet": { "name": "Toasted Brioche with Chicken", "desc": "Avocado purée, roasted chicken fillet, pickles, pesto, sun-dried tomatoes, baby spinach, truffle hollandaise sauce, warm homemade brioche." },
-        "truffe": { "name": "Toasted Brioche with Truffle", "desc": "Avocado purée, truffle sautéed mushrooms, baby spinach, arugula, free-range poached egg, hollandaise sauce, warm homemade brioche." },
-        "labneh": { "name": "Toasted Brioche with Labneh", "desc": "Avocado, labneh, cherry tomatoes, cucumber, mint, arugula, olive oil, paprika, free-range poached egg, warm homemade brioche." }
+        "houmous": { "name": "Toasted Hummus Brioche", "desc": "Chickpea purée, lemon, turmeric, wild pepper, baby spinach, arugula, pomegranate molasses, tomatoes, cucumber, warm house-made brioche." },
+        "saumon": { "name": "Toasted Salmon Brioche", "desc": "Avocado purée, smoked salmon, baby spinach, arugula, free-range poached egg, hollandaise sauce, warm house-made brioche." },
+        "crevettes": { "name": "Toasted Shrimp Brioche", "desc": "Avocado purée, shrimp, chives, dill, lemon, house white sauce, baby spinach, arugula, free-range poached egg, warm house-made brioche." },
+        "fromageTresse": { "name": "Toasted Braided Cheese Brioche", "desc": "Avocado purée, pesto, braided cheese, cherry tomatoes, slow-roasted tomatoes, free-range poached egg, baby spinach, arugula, hollandaise sauce, warm house-made brioche." },
+        "poulet": { "name": "Toasted Chicken Brioche", "desc": "Avocado purée, roasted chicken fillet, pickles, pesto, sun-dried tomatoes, baby spinach, truffle hollandaise sauce, warm house-made brioche." },
+        "truffe": { "name": "Toasted Truffle Brioche", "desc": "Avocado purée, sautéed mushrooms with truffle, baby spinach, arugula, free-range poached egg, hollandaise sauce, warm house-made brioche." },
+        "labneh": { "name": "Toasted Labneh Brioche", "desc": "Avocado, labneh, cherry tomatoes, cucumber, mint, arugula, olive oil, paprika, free-range poached egg, warm house-made brioche." }
       },
       "pancakes-sales": {
         "saumon": { "name": "Salmon Pancakes", "desc": "Avocado purée, maple syrup, smoked salmon, fresh spinach, free-range poached egg." },
-        "crevettes": { "name": "Prawn Pancakes", "desc": "Avocado purée, maple syrup, prawns, chives, dill, lemon, homemade white sauce, baby spinach, arugula, free-range poached egg." },
-        "labneh": { "name": "Labneh Pancakes", "desc": "Avocado, labneh, cherry tomatoes, cucumber, mint, arugula, olive oil, paprika, free-range poached egg." }
+        "crevettes": { "name": "Shrimp Pancakes", "desc": "Avocado purée, maple syrup, shrimp, chives, dill, lemon, house white sauce, baby spinach, arugula, free-range poached egg." },
+        "labneh": { "name": "Pancakes Labneh", "desc": "Avocado, labneh, cherry tomatoes, cucumber, mint, arugula, olive oil, paprika, free-range poached egg." }
       },
       "pancakes-sucres": {
-        "cremeNoisette": { "name": "Hazelnut Cream Pancakes", "desc": "Homemade hazelnut cream, maple syrup, chocolate sauce, toasted almonds, Madagascar vanilla whipped cream." },
-        "fruitsFrais": { "name": "Fresh Fruit Pancakes", "desc": "Maple syrup, fresh seasonal fruit, toasted almonds, Madagascar vanilla whipped cream." },
-        "dubai": { "name": "Dubai Pancakes", "desc": "Homemade pistachio cream, maple syrup, chocolate sauce, toasted pistachios, toasted kunafa, Madagascar vanilla whipped cream." }
+        "cremeNoisette": { "name": "Pancakes with Hazelnut Cream", "desc": "Homemade hazelnut cream, maple syrup, chocolate sauce, roasted almonds, Madagascar vanilla whipped cream." },
+        "fruitsFrais": { "name": "Pancakes with Fresh Fruit", "desc": "Maple syrup, seasonal fresh fruits, roasted almonds, Madagascar vanilla whipped cream." },
+        "dubai": { "name": "Pancakes Dubai", "desc": "Homemade pistachio cream, maple syrup, chocolate sauce, roasted pistachios, grilled kunafa, Madagascar vanilla whipped cream." }
       },
       "cookies": {
-        "pecan": { "name": "Pecan, Milk Chocolate & Sea Salt Cookie" },
+        "pecan": { "name": "Pecan Cookie, Milk Chocolate, Fleur de Sel" },
         "pistache": { "name": "Pistachio & Milk Chocolate Cookie" },
-        "chocoBlancNoir": { "name": "Dark & White Chocolate Cookie, Sea Salt" },
+        "chocoBlancNoir": { "name": "Dark & White Chocolate & Fleur de Sel Cookie" },
         "croissant": { "name": "Croissant" }
       },
       "chaudes": {
-        "espresso": { "name": "Espresso / Lungo" },
+        "espresso": { "name": "Espresso / Long Coffee" },
         "doubleEspresso": { "name": "Double Espresso" },
         "americano": { "name": "Americano", "desc": "Double shot." },
         "macchiato": { "name": "Macchiato" },
         "flatWhite": { "name": "Flat White", "desc": "Double espresso." },
         "latte": { "name": "Latte" },
         "cappuccino": { "name": "Cappuccino" },
-        "chaiLatteCafe": { "name": "Chai Latte with Coffee" },
+        "chaiLatteCafe": { "name": "Coffee Chai Latte" },
         "chaiLatte": { "name": "Chai Latte" },
         "matchaLatte": { "name": "Matcha Latte" },
-        "matchaLatteSesame": { "name": "Black Sesame Matcha Latte" },
-        "matchaLatteCollagene": { "name": "Collagen & Black Sesame Matcha Latte" },
-        "mochaChocolat": { "name": "Chocolate Mocha", "desc": "Homemade." },
-        "chocolatViennois": { "name": "Viennese Hot Chocolate", "desc": "Homemade." },
-        "chocolatChaud": { "name": "Hot Chocolate", "desc": "Homemade." },
-        "theInfusions": { "name": "Tea & Infusions", "desc": "Ask your barista. Choose from: sencha green tea, mint green tea, breakfast black tea, earl grey black tea, rooibos vahiné infusion." }
+        "matchaLatteSesame": { "name": "Matcha Latte with Black Sesame" },
+        "matchaLatteCollagene": { "name": "Matcha Latte with Collagen & Black Sesame" },
+        "mochaChocolat": { "name": "Café Mocha Chocolat (Home-made)" },
+        "chocolatViennois": { "name": "Viennese Hot Chocolate (Home-made)" },
+        "chocolatChaud": { "name": "Hot Chocolate (Home-made)" },
+        "theInfusions": { "name": "Tea & Infusions", "desc": "Ask your barista. Choose from: green tea sencha, mint green tea, breakfast black tea, earl grey black tea, vanilla rooibos infusion." }
       },
       "fraiches": {
         "virginMojito": { "name": "Virgin Mojito" },
         "virginMojitoFraise": { "name": "Strawberry Virgin Mojito" },
-        "jusOrangeHibiscus": { "name": "Hibiscus Orange Juice", "desc": "Orange, hibiscus and orange blossom." },
+        "jusOrangeHibiscus": { "name": "Fresh Juice: Orange, Hibiscus & Orange Blossom" },
         "jusGrenadeBio": { "name": "Organic Pomegranate Juice", "desc": "No added sugar." },
-        "jusOrangePresse": { "name": "Fresh Squeezed Orange Juice" },
-        "eauMinerale": { "name": "Still Water" },
+        "jusOrangePresse": { "name": "Freshly Squeezed Orange Juice" },
+        "eauMinerale": { "name": "Mineral Water" },
         "eauGazeuse": { "name": "Sparkling Water (Perrier)" },
         "cocaCola": { "name": "Coca-Cola" }
       },
       "glacees": {
         "matchaLatteGlace": { "name": "Iced Matcha Latte" },
-        "matchaLatteGlaceFraise": { "name": "Iced Strawberry Matcha Latte", "desc": "The house's signature latte." },
-        "matchaLatteGlaceSesame": { "name": "Iced Black Sesame Matcha Latte" },
-        "matchaLatteGlaceCollagene": { "name": "Iced Collagen & Black Sesame Matcha Latte" },
-        "theGlacePeche": { "name": "Iced Peach Tea" },
+        "matchaLatteGlaceFraise": { "name": "Iced Matcha Latte Strawberry", "desc": "The house's signature latte." },
+        "matchaLatteGlaceSesame": { "name": "Iced Matcha Latte with Black Sesame" },
+        "matchaLatteGlaceCollagene": { "name": "Iced Matcha Latte with Collagen & Black Sesame" },
+        "theGlacePeche": { "name": "Iced Tea Peach" },
         "americanoGlace": { "name": "Iced Americano" },
         "flatWhiteGlace": { "name": "Iced Flat White" },
         "latteGlace": { "name": "Iced Latte" },
-        "chaiLatteCafeGlace": { "name": "Iced Chai Latte with Coffee" },
+        "chaiLatteCafeGlace": { "name": "Iced Coffee Chai Latte" },
         "chaiLatteGlace": { "name": "Iced Chai Latte" },
-        "chocolatGlace": { "name": "Iced Chocolate" },
-        "mochaChocolatGlace": { "name": "Iced Chocolate Mocha" }
+        "chocolatGlace": { "name": "Iced Hot Chocolate" },
+        "mochaChocolatGlace": { "name": "Iced Mocha Chocolat" }
       }
     }
   },
