@@ -108,7 +108,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: "4.9",
-            reviewCount: "1124",
+            reviewCount: "1133",
           },
           sameAs: [
             "https://instagram.com/lamagiedeparis7",
