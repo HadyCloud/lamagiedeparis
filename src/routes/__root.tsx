@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Nav, Footer, Ticker } from "@/components/brand";
 import i18n, { applyDetectedLanguage } from "@/i18n";
+import { SITE_URL } from "@/lib/site";
 
 function NotFoundComponent() {
   const { t } = useTranslation();
@@ -74,6 +75,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "La Magie de Paris" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
     ],
     links: [
       {
@@ -92,7 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Restaurant",
           name: "La Magie de Paris",
-          image: "https://id-preview--965de17b-78f7-4c72-978c-61f060cc7bcc.lovable.app/",
+          image: `${SITE_URL}/og-image.jpg`,
           servesCuisine: ["Brunch", "Café de spécialité", "Français"],
           priceRange: "€€",
           address: {

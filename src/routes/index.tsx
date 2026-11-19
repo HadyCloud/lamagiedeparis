@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Arch, Ornament, SectionHead, Stars, BUSINESS, useReveal } from "@/components/brand";
+import { SITE_URL } from "@/lib/site";
 import hero from "@/assets/hero.jpg";
 import heroClip from "@/assets/clip_hero.mp4";
 import sigBriocheFromageTresse from "@/assets/sig2-brioche-fromage-tresse.webp";
@@ -23,9 +24,9 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "La Magie de Paris, salon de brunch à deux pas de la Tour Eiffel" },
       { property: "og:description", content: "Chaque plat est composé comme une petite sculpture, entre héritage syrien et élégance parisienne. Ouvert tous les jours, sans réservation." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: `${SITE_URL}/` },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
   }),
   component: Index,
 });

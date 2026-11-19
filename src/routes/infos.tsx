@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Arch, Ornament, SectionHead, BUSINESS, useReveal } from "@/components/brand";
 import { LazyVideo } from "@/components/lazy-video";
+import { SITE_URL } from "@/lib/site";
 import story from "@/assets/story.webp";
 import ig1 from "@/assets/ig/ig-1.mp4";
 import ig1Poster from "@/assets/ig/ig-1-poster.webp";
@@ -28,9 +29,9 @@ export const Route = createFileRoute("/infos")({
       { property: "og:title", content: "Infos pratiques, La Magie de Paris" },
       { property: "og:description", content: "Nous trouver, nous écrire, nous suivre : un salon à deux pas de la Tour Eiffel." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/infos" },
+      { property: "og:url", content: `${SITE_URL}/infos` },
     ],
-    links: [{ rel: "canonical", href: "/infos" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/infos` }],
   }),
   component: InfosPage,
 });

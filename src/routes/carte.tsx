@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Ornament, SectionHead, useReveal, Arch, BUSINESS } from "@/components/brand";
+import { SITE_URL } from "@/lib/site";
 import catBrioches from "@/assets/cat-brioches.webp";
 import catPancakesSales from "@/assets/cat-pancakes-sales.webp";
 import catPancakesSucres from "@/assets/cat-pancakes-sucres.webp";
@@ -34,9 +35,9 @@ export const Route = createFileRoute("/carte")({
       { property: "og:title", content: "La Carte, La Magie de Paris" },
       { property: "og:description", content: "La carte complète du salon, entre héritage syrien et tradition parisienne." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/carte" },
+      { property: "og:url", content: `${SITE_URL}/carte` },
     ],
-    links: [{ rel: "canonical", href: "/carte" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/carte` }],
   }),
   component: CartePage,
 });
