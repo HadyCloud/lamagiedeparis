@@ -5,14 +5,15 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Arch, Ornament, SectionHead, Stars, BUSINESS, useReveal } from "@/components/brand";
 import hero from "@/assets/hero.jpg";
-import sigBriocheFromageTresse from "@/assets/sig2-brioche-fromage-tresse.png";
-import sigBriochePoulet from "@/assets/sig2-brioche-poulet.png";
-import sigPancakesDubai from "@/assets/sig2-pancakes-dubai.png";
-import story from "@/assets/story.png";
-import cravingSale from "@/assets/craving-sale.png";
-import cravingSucre from "@/assets/craving-sucre.png";
-import cravingCoffee from "@/assets/craving-coffee.png";
-import cravingFraicheurs from "@/assets/craving-fraicheurs.png";
+import heroClip from "@/assets/clip_hero.mp4";
+import sigBriocheFromageTresse from "@/assets/sig2-brioche-fromage-tresse.webp";
+import sigBriochePoulet from "@/assets/sig2-brioche-poulet.webp";
+import sigPancakesDubai from "@/assets/sig2-pancakes-dubai.webp";
+import story from "@/assets/story.webp";
+import cravingSale from "@/assets/craving-sale.webp";
+import cravingSucre from "@/assets/craving-sucre.webp";
+import cravingCoffee from "@/assets/craving-coffee.webp";
+import cravingFraicheurs from "@/assets/craving-fraicheurs.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -95,7 +96,7 @@ function Index() {
           aria-label={t("home.hero.videoAlt")}
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/assets/clip_hero.mp4" type="video/mp4" />
+          <source src={heroClip} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--garnet-deep)]/80 via-[color:var(--garnet-deep)]/55 to-[color:var(--garnet-deep)]/90" />
         {/* inner gold frame */}

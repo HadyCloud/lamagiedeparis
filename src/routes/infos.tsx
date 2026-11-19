@@ -2,7 +2,23 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Arch, Ornament, SectionHead, BUSINESS, useReveal } from "@/components/brand";
-import story from "@/assets/story.png";
+import { LazyVideo } from "@/components/lazy-video";
+import story from "@/assets/story.webp";
+import ig1 from "@/assets/ig/ig-1.mp4";
+import ig1Poster from "@/assets/ig/ig-1-poster.webp";
+import ig2 from "@/assets/ig/ig-2.mp4";
+import ig2Poster from "@/assets/ig/ig-2-poster.webp";
+import ig3 from "@/assets/ig/ig-3.mp4";
+import ig3Poster from "@/assets/ig/ig-3-poster.webp";
+import ig4 from "@/assets/ig/ig-4.mp4";
+import ig4Poster from "@/assets/ig/ig-4-poster.webp";
+import ig5 from "@/assets/ig/ig-5.mp4";
+import ig5Poster from "@/assets/ig/ig-5-poster.webp";
+import ig6 from "@/assets/ig/ig-6.webp";
+import ig7 from "@/assets/ig/ig-7.mp4";
+import ig7Poster from "@/assets/ig/ig-7-poster.webp";
+import ig8 from "@/assets/ig/ig-8.mp4";
+import ig8Poster from "@/assets/ig/ig-8-poster.webp";
 
 export const Route = createFileRoute("/infos")({
   head: () => ({
@@ -19,15 +35,20 @@ export const Route = createFileRoute("/infos")({
   component: InfosPage,
 });
 
-const IG_MEDIA: { src: string; type: "video" | "image" }[] = [
-  { src: "/videos/ig/ig-1.mp4", type: "video" },
-  { src: "/videos/ig/ig-2.mp4", type: "video" },
-  { src: "/videos/ig/ig-3.mp4", type: "video" },
-  { src: "/videos/ig/ig-4.mp4", type: "video" },
-  { src: "/videos/ig/ig-5.mp4", type: "video" },
-  { src: "/videos/ig/ig-6.jpg", type: "image" },
-  { src: "/videos/ig/ig-7.mp4", type: "video" },
-  { src: "/videos/ig/ig-8.mp4", type: "video" },
+// Videos are 720×720 centre crops (exactly what the square tile shows) and are
+// only downloaded once the tile scrolls into view, see <LazyVideo />.
+const IG_MEDIA: (
+  | { type: "video"; src: string; poster: string }
+  | { type: "image"; src: string }
+)[] = [
+  { type: "video", src: ig1, poster: ig1Poster },
+  { type: "video", src: ig2, poster: ig2Poster },
+  { type: "video", src: ig3, poster: ig3Poster },
+  { type: "video", src: ig4, poster: ig4Poster },
+  { type: "video", src: ig5, poster: ig5Poster },
+  { type: "image", src: ig6 },
+  { type: "video", src: ig7, poster: ig7Poster },
+  { type: "video", src: ig8, poster: ig8Poster },
 ];
 
 function InfosPage() {
@@ -111,12 +132,9 @@ function InfosPage() {
               aria-label={t("infos.instagram.postAlt", { n: i + 1 })}
             >
               {m.type === "video" ? (
-                <video
+                <LazyVideo
                   src={m.src}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
+                  poster={m.poster}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               ) : (
