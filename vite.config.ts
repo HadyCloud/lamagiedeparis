@@ -12,9 +12,17 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  // Pin the deploy target to Vercel outside of Lovable's own sandbox build
-  // (which force-overrides this to Cloudflare). Zero-config auto-detection
-  // would likely pick Vercel anyway once built on Vercel's CI, but pinning
-  // it here makes the build target explicit and predictable.
-  nitro: { preset: "vercel" },
+  // Deploy target: Cloudflare Workers (server-rendered pages + static assets).
+  // `deployConfig` makes the build write .output/server/wrangler.json (plus the
+  // .wrangler/deploy/config.json redirect), so `wrangler deploy` needs no
+  // hand-written config. The worker name is pinned so it never changes between
+  // builds; it must match the Worker name created in the Cloudflare dashboard.
+  nitro: {
+    preset: "cloudflare-module",
+    cloudflare: {
+      nodeCompat: true,
+      deployConfig: true,
+      wrangler: { name: "lamagiedeparis" },
+    },
+  },
 });
