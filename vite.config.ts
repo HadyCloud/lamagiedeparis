@@ -15,14 +15,13 @@ export default defineConfig({
   // Deploy target: Cloudflare Workers (server-rendered pages + static assets).
   // `deployConfig` makes the build write .output/server/wrangler.json (plus the
   // .wrangler/deploy/config.json redirect), so `wrangler deploy` needs no
-  // hand-written config. The worker name is pinned so it never changes between
-  // builds; it must match the Worker name created in the Cloudflare dashboard.
+  // hand-written config. The Worker name comes from wrangler.jsonc and must match
+  // the Worker name created in the Cloudflare dashboard.
   nitro: {
     preset: "cloudflare-module",
     cloudflare: {
       nodeCompat: true,
       deployConfig: true,
-      wrangler: { name: "lamagiedeparis" },
     },
   },
 });
