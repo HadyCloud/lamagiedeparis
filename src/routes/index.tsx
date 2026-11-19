@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Arch, Ornament, SectionHead, Stars, BUSINESS, useReveal } from "@/components/brand";
 import { SITE_URL } from "@/lib/site";
+import { videoUrl } from "@/lib/video-url";
 import hero from "@/assets/hero.jpg";
 import heroClip from "@/assets/clip_hero.mp4";
 import sigBriocheFromageTresse from "@/assets/sig2-brioche-fromage-tresse.webp";
@@ -97,7 +98,7 @@ function Index() {
           aria-label={t("home.hero.videoAlt")}
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src={heroClip} type="video/mp4" />
+          <source src={videoUrl(heroClip)} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--garnet-deep)]/80 via-[color:var(--garnet-deep)]/55 to-[color:var(--garnet-deep)]/90" />
         {/* inner gold frame */}

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { videoUrl } from "@/lib/video-url";
 
 type LazyVideoProps = {
   src: string;
@@ -24,7 +25,7 @@ export function LazyVideo({ src, poster, className }: LazyVideoProps) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          if (!video.getAttribute("src")) video.src = src;
+          if (!video.getAttribute("src")) video.src = videoUrl(src);
           void video.play().catch(() => {});
         } else {
           video.pause();
